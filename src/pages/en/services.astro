@@ -1,0 +1,279 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Power Systems & Substation Engineering Services | Serviproma Energy" 
+  description="Comprehensive solutions for electrical protections, SAS automation (IEC 61850), SCADA integration, and power system studies up to 765 kV."
+  lang="en" 
+  currentPath="/en/services"
+>
+  <!-- Hero Services with Night Substation Background -->
+  <section class="relative py-24 border-b border-slate-800 bg-slate-950 overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="/images/benchmarks/eda-substation-night.jpg" 
+        alt="High-voltage power substation night view" 
+        class="w-full h-full object-cover object-center opacity-25"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/95 to-slate-950"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10">
+      <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-3 font-mono">Specialized Technical Portfolio</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">End-to-End Solutions for Bulk Power Systems</h1>
+      <p class="mt-4 text-slate-300 text-base leading-relaxed">
+        Covering the complete lifecycle of protection, automation, and control systems in substations and heavy industrial plants, from conceptual design to on-site live energization.
+      </p>
+    </div>
+  </section>
+
+  <!-- Detailed Services -->
+  <section class="py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      
+      <!-- 1. Electrical Protections -->
+      <div id="protections" class="scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="rounded-xl overflow-hidden border border-slate-800 shadow-xl group">
+            <div class="h-56 overflow-hidden relative">
+              <img 
+                src="/images/benchmarks/eda-protection-testing.webp" 
+                alt="Protection relay testing on laboratory panels and high-voltage switchgear" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 backdrop-blur-sm border border-amber-500/40 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                13.8 kV to 765 kV
+              </span>
+            </div>
+          </div>
+          <div>
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider block mb-2 font-mono">01 · Core Specialty</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Electrical Protections & Commissioning</h2>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Ensuring selectivity, high operating speed, and total dependability of protection schemes for critical generation, transmission, and industrial assets.
+            </p>
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 space-y-2 font-mono">
+              <div><strong class="text-white">Standards:</strong> IEEE, IEC 60255, utility standards (CORPOELEC, Transelec, Enel).</div>
+              <div><strong class="text-white">Voltage Levels:</strong> 13.8 kV, 115 kV, 230 kV, 400 kV up to 765 kV.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Relay Settings & Coordination</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Calculation of settings and parameterization for distance (21), line differential (87L), transformer differential (87T), busbar differential (87B), generator, and breaker failure (50BF) relays.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">FAT & SAT Testing</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Factory Acceptance Testing (FAT) and Site Acceptance Testing (SAT). Secondary and primary injection using Omicron, Doble, and Ponovo high-precision test sets.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Field Commissioning & Energization</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Verification of trip matrices, intertrip schemes, teleprotection via fiber optics or carrier, interlocking logics, and instrument transformer (CT/VT) polarity checks.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Multi-Vendor Retrofitting</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Replacement and retrofit of legacy electromechanical or static relays with modern numerical IEDs: Siemens SIPROTEC 4/5, ABB Relion, GE UR, SEL, and Schneider MiCOM.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Automation and SCADA -->
+      <div id="automation" class="scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-16 border-t border-slate-800/80">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="rounded-xl overflow-hidden border border-slate-800 shadow-xl group">
+            <div class="h-56 overflow-hidden relative">
+              <img 
+                src="/images/benchmarks/scadatech-integracion.png" 
+                alt="SAS architecture and gateway integration for substation telecontrol" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 backdrop-blur-sm border border-amber-500/40 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                IEC 61850 & SICAM
+              </span>
+            </div>
+          </div>
+          <div>
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider block mb-2 font-mono">02 · Control & Supervision</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Automation, Control & SCADA</h2>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Designing and commissioning substation automation systems (SAS) and telecontrol links to regional and national dispatch control centers.
+            </p>
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 space-y-2 font-mono">
+              <div><strong class="text-white">Digital Standard:</strong> IEC 61850 (Station bus MMS and process bus GOOSE).</div>
+              <div><strong class="text-white">OT Networks:</strong> High-availability RSTP, PRP, and HSR protocols.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Dispatch Center Integration</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Mapping and end-to-end integration of telemetry, signaling, and telecontrol commands via standard protocols: IEC 60870-5-101/104, DNP3, and ICCP.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">RTU & Industrial Gateways</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Configuration, diagnostics, and engineering of Siemens SICAM RTUs (A8000, AK3, TM1703, Toolbox II) and multi-vendor protocol converters.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Local HMI & Station SCADA</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Development of operational single-line mimics and alarm management on industry-grade platforms such as Siemens WinCC and COPA-DATA zenon.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">GPS Time Synchronization</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Architecture and commissioning of GPS master clock servers with sub-millisecond precision utilizing NTP, SNTP, and IEEE 1588 (PTP) protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Engineering & Power System Studies -->
+      <div id="studies" class="scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-16 border-t border-slate-800/80">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="rounded-xl overflow-hidden border border-slate-800 shadow-xl group">
+            <div class="h-56 overflow-hidden relative">
+              <img 
+                src="/images/benchmarks/pace-cableado-control.webp" 
+                alt="Detailed control wiring and test blocks in substation panel" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 backdrop-blur-sm border border-amber-500/40 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                Modeling & Simulation
+              </span>
+            </div>
+          </div>
+          <div>
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider block mb-2 font-mono">03 · Power Consulting</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Engineering & Power System Studies</h2>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Mathematical modeling and simulation on specialized software (ETAP, DIgSILENT PowerFactory, ASPEN) to guarantee grid reliability and code compliance.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Protection Coordination (TCC)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Time-current characteristic curves, current and time discrimination to avoid nuisance trips on industrial feeders and generators.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Short-Circuit & Load Flow</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Calculation of symmetrical/asymmetrical fault currents, equipment interrupting ratings, voltage profiles, and transmission losses.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Basic & Detailed Engineering</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Single-line diagrams, AC/DC schematic drawings, trip logics, terminal wiring schedules, and panel layout diagrams for protection cabinets.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Equipment Sizing & Datasheets</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Technical specifications, CT/VT saturation sizing, and engineering datasheets for procurement and utility tender bids.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Industry and Oil -->
+      <div id="industry" class="scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-16 border-t border-slate-800/80">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="rounded-xl overflow-hidden border border-slate-800 shadow-xl group">
+            <div class="h-56 overflow-hidden relative">
+              <img 
+                src="/images/refineria-petroleo.jpg" 
+                alt="Petrochemical complex and continuous process substation" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 backdrop-blur-sm border border-amber-500/40 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                Industrial Plants & MCC
+              </span>
+            </div>
+          </div>
+          <div>
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider block mb-2 font-mono">04 · Productive Sector</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Industry, Oil & Petrochemicals</h2>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Robust solutions for continuous process facilities where an unplanned shutdown results in substantial production losses.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Large Motor Protection</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Thermal modeling, locked-rotor, phase unbalance, and differential protection for medium-voltage motors in refineries and chemical plants.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Fast Load Shedding Schemes</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Under-frequency and under-voltage logic matrices designed to preserve islanded generation stability during major utility grid disturbances.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Motor Control Centers (MCC)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Integration of smart starters, variable frequency drives (VFD), and intelligent overload relays into plant automation networks.
+            </p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="text-base font-bold text-white mb-2">Industrial Commissioning</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Proven track record in petrochemical facilities (e.g., PEQUIVEN Metanol de Oriente Plant 1 and 2) and industrial cogeneration plants.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-slate-950 border-t border-slate-800 text-center relative overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="/images/benchmarks/pace-pruebas-primarios.webp" 
+        alt="Primary equipment testing in high-voltage switchyard" 
+        class="w-full h-full object-cover opacity-20"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-slate-950"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-semibold tracking-wider uppercase mb-4">
+        Technical Assessment Without Obligation
+      </div>
+      <h3 class="text-3xl font-bold text-white mb-4">Require a Technical Evaluation of Your Facilities?</h3>
+      <p class="text-slate-300 text-sm mb-8 max-w-2xl mx-auto">Our senior engineering specialists coordinate field diagnostic visits and engineering audits for substations and industrial facilities.</p>
+      <a href="/en/contact" class="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded transition-all shadow-xl shadow-amber-500/20 active:scale-95 inline-block">
+        Request Technical Visit
+      </a>
+    </div>
+  </section>
+</Layout>

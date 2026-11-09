@@ -1,0 +1,316 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="SLRP · Remote Protection Reading System | Serviproma Energy" 
+  description="Automated COMTRADE oscillography retrieval in ~2 minutes post-trip. Centralized remote event analysis for transmission dispatch and protection engineering."
+  lang="en" 
+  currentPath="/en/slrp"
+>
+  <!-- Hero SLRP with Control Room Background -->
+  <section class="relative py-24 border-b border-slate-800 bg-slate-950 overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="/images/control-room.jpg" 
+        alt="Real-time SCADA transmission dispatch center" 
+        class="w-full h-full object-cover opacity-20"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/95 to-slate-950"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        <span>High-Impact Proprietary Solution</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+        SLRP
+      </h1>
+      <p class="text-xl sm:text-2xl text-amber-400 font-semibold mt-2 font-mono">
+        Remote Protection Reading System
+      </p>
+      <p class="mt-6 text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+        Centralize COMTRADE oscillographic fault records and sequence-of-events from all substation relays in an automated architecture, engineered specifically for Transmission Dispatch and Protection Departments.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#contact-slrp" class="px-8 py-4 rounded bg-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider hover:bg-amber-400 shadow-xl shadow-amber-500/20 transition-all">
+          Request Demonstration
+        </a>
+        <a href="#how-it-works" class="px-8 py-4 rounded border border-slate-700 bg-slate-900/60 text-white font-semibold text-xs uppercase tracking-wider hover:bg-slate-800 transition-all">
+          How It Works ↓
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conventional Operation vs SLRP Solution -->
+  <section class="py-24 border-b border-slate-800 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Operational Challenge -->
+        <div class="space-y-6">
+          <div class="rounded-xl overflow-hidden border border-slate-800 shadow-xl">
+            <div class="h-56 overflow-hidden relative">
+              <img 
+                src="/images/tecnicos-lineas-alta-tension.jpg" 
+                alt="Field technicians traveling to remote substation after an outage trip" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-rose-500/20 border border-rose-500/40 text-[10px] font-mono text-rose-300 font-bold uppercase tracking-wider">
+                Conventional Manual Workflow
+              </span>
+            </div>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-rose-400 uppercase tracking-widest block mb-2 font-mono">The Operational Challenge</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">What happens when a transmission line trips?</h2>
+            <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+              In conventional grids lacking automated remote retrieval, when a transmission line or power transformer trips, protection engineers must <strong>physically travel to remote substations</strong> with laptops to manually extract oscillograms from the relay front ports.
+            </p>
+            <div class="mt-6 space-y-3">
+              <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-200 text-xs flex items-center gap-3">
+                <span class="text-base">⏱️</span>
+                <span>Hours or days of delay before knowing with certainty why the circuit breaker tripped.</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-200 text-xs flex items-center gap-3">
+                <span class="text-base">🚗</span>
+                <span>High logistical overhead and travel risks along remote and hazardous switchyard access routes.</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-200 text-xs flex items-center gap-3">
+                <span class="text-base">⚠️</span>
+                <span>Blind reclosing attempts without knowing if the fault was transient, permanent, or if proper zones cleared.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLRP Solution -->
+        <div class="space-y-6">
+          <div class="rounded-xl overflow-hidden border border-amber-500/30 shadow-2xl">
+            <div class="h-56 overflow-hidden relative">
+              <img 
+                src="/images/benchmarks/scadatech-sistemas.png" 
+                alt="Automated COMTRADE oscillograms delivered to desktop in 2 minutes" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-amber-500/20 border border-amber-500/40 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                Automated SLRP Response
+              </span>
+            </div>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-amber-500/30 shadow-2xl relative">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2 font-mono">The SLRP Solution</span>
+            <h3 class="text-2xl font-bold text-white mb-3">Fault oscillograms on your desk in ~2 minutes</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+              SLRP automatically queries protection relays over existing utility telecommunication networks immediately upon trip detection, retrieving IEEE C37.111 COMTRADE files and alerting engineering teams instantly.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 text-center font-mono">
+              <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+                <div class="text-3xl font-extrabold text-amber-400">≈ 2 min</div>
+                <div class="text-[11px] text-slate-400 mt-1">Post-trip availability</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+                <div class="text-3xl font-extrabold text-amber-400">0 km</div>
+                <div class="text-[11px] text-slate-400 mt-1">Travel required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Level Architecture -->
+  <section id="how-it-works" class="py-24 border-b border-slate-800 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2 font-mono">System Architecture</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">4 Levels of Robust Integration</h2>
+        <p class="text-slate-400 text-sm mt-3">Engineered to operate seamlessly on existing communication infrastructure without compromising critical OT network security.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Level 01 -->
+        <div class="rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
+          <div class="h-36 overflow-hidden relative">
+            <img 
+              src="/images/benchmarks/pace-tablero-borneras.webp" 
+              alt="Protection IED relays and wiring terminals in switchyard bay" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold">
+              LEVEL 01
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-base font-bold text-white mb-2">Protection IEDs</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Relays from any vendor (Siemens, GE, SEL, ABB, Schneider, ZIV) across substation bays connected via Ethernet or serial communication buses.
+              </p>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono mt-4 block">Siemens · SEL · GE · ABB</span>
+          </div>
+        </div>
+
+        <!-- Level 02 -->
+        <div class="rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
+          <div class="h-36 overflow-hidden relative">
+            <img 
+              src="/images/image10.jpeg" 
+              alt="Industrial gateway concentrator installed in substation panel" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold">
+              LEVEL 02
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-base font-bold text-white mb-2">Local Concentrator</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Substation hardened gateway/industrial server, GPS-synchronized for precise millisecond-resolution event timestamping.
+              </p>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono mt-4 block">GPS Timestamping ±1ms</span>
+          </div>
+        </div>
+
+        <!-- Level 03 -->
+        <div class="rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
+          <div class="h-36 overflow-hidden relative">
+            <img 
+              src="/images/benchmarks/scadatech-telecom.png" 
+              alt="Industrial networking switches and OPGW fiber optic links" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold">
+              LEVEL 03
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-base font-bold text-white mb-2">Communication Channel</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Leverages existing corporate WAN infrastructure (fiber optics, OPGW, microwave links, or secure satellite channels) with segregated traffic.
+              </p>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono mt-4 block">OPGW · Microwave · WAN</span>
+          </div>
+        </div>
+
+        <!-- Level 04 -->
+        <div class="rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
+          <div class="h-36 overflow-hidden relative">
+            <img 
+              src="/images/benchmarks/pace-sala-tableros.webp" 
+              alt="Central analysis and visualization server in load dispatch center" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold">
+              LEVEL 04
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-base font-bold text-white mb-2">Central Server</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Unified repository at Load Dispatch with web viewer, automated email/Telegram alerts, and native COMTRADE export.
+              </p>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono mt-4 block">COMTRADE IEEE C37.111</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Highlights -->
+  <section class="py-20 border-b border-slate-800 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-amber-400 text-2xl mb-3">📄</div>
+          <h4 class="text-base font-bold text-white mb-2">Open COMTRADE Standard</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Strictly compliant with IEEE C37.111. Records can be opened directly in any industry analysis software (SIGRA, Wavewin, AcSELerator, etc.).
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-amber-400 text-2xl mb-3">🔄</div>
+          <h4 class="text-base font-bold text-white mb-2">Multi-Vendor Compatibility</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            No requirement for single-brand relay fleets. SLRP interfaces with proprietary native protocols and homogenizes output data delivery.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-amber-400 text-2xl mb-3">🛡️</div>
+          <h4 class="text-base font-bold text-white mb-2">Cybersecurity & Isolation</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            The remote interrogation channel operates strictly segregated from the real-time operational SCADA telecontrol channel, preventing interference.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form SLRP -->
+  <section id="contact-slrp" class="py-24 bg-slate-950 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="/images/benchmarks/eda-substation-night.jpg" 
+        alt="Power substation switchyard at night" 
+        class="w-full h-full object-cover opacity-15"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-slate-950"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-4">
+        Custom Utility Implementation
+      </div>
+      <h2 class="text-3xl font-bold text-white mb-4">Deploy SLRP Across Your Power Grid</h2>
+      <p class="text-slate-300 text-sm mb-8">Consult with us regarding your installed protection relay base to evaluate immediate remote retrieval feasibility.</p>
+      
+      <div class="p-8 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-800 text-left shadow-2xl backdrop-blur-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+            <input type="text" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="John Doe, P.E." />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Company / Utility *</label>
+            <input type="text" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="Transmission Utility / Industrial Facility" />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Corporate Email *</label>
+          <input type="email" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="jdoe@utility.com" />
+        </div>
+        <div class="mb-6">
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Facility Details (Number of substations, relay models, voltage levels)</label>
+          <textarea rows="3" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="We operate 4 substations at 115 kV with Siemens SIPROTEC 4 and GE Multilin relays..."></textarea>
+        </div>
+        <button class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-xl shadow-amber-500/20 active:scale-95">
+          Submit SLRP Inquiry →
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
