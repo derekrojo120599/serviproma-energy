@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 // Corporate Landing Page - Serviproma Energy C.A.
 // Color Palette: Navy #0B1B33, Amber #F5B21A, White #FFFFFF, Slate #475569
 ---
@@ -186,7 +188,7 @@
     </nav>
 
     <!-- 3. HERO (Foto a ancho completo con degradado blanco desde la izquierda, titular de 2 líneas, 2 botones con flecha) -->
-    <section class="relative min-h-[82vh] lg:min-h-[86vh] flex items-center bg-white overflow-hidden border-b border-slate-200">
+    <section class="relative min-h-[82vh] lg:min-h-[88vh] flex items-center bg-white overflow-hidden pb-32 lg:pb-40">
       
       <!-- Foto de fondo de alta tensión -->
       <div class="absolute inset-0 z-0">
@@ -198,9 +200,9 @@
         <!-- Degradado blanco continuo desde la izquierda para máxima legibilidad -->
         <div 
           class="absolute inset-0"
-          style="background: linear-gradient(to right, #FFFFFF 0%, rgba(255,255,255,0.98) 36%, rgba(255,255,255,0.88) 54%, rgba(255,255,255,0.25) 75%, transparent 92%);"
+          style="background: linear-gradient(to right, #FFFFFF 0%, #FFFFFF 32%, rgba(255,255,255,0.98) 48%, rgba(255,255,255,0.85) 65%, rgba(255,255,255,0.20) 85%, transparent 100%);"
         ></div>
-        <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white via-white/60 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
       </div>
 
       <!-- Contenido del Hero -->
@@ -453,10 +455,13 @@
       </div>
     </section>
 
-    <!-- 6. BANNER CTA CON ESTADÍSTICAS (Fondo oscuro #0B1B33 con foto y corte geométrico) -->
-    <section class="relative bg-[#0B1B33] text-white py-24 overflow-hidden border-y border-slate-800">
+    <!-- 6. BANNER CTA CON ESTADÍSTICAS (Fondo oscuro #0B1B33 con foto y corte diagonal) -->
+    <section class="relative bg-[#0B1B33] text-white py-28 overflow-hidden">
+      <!-- Corte diagonal superior e inferior -->
+      <div class="absolute inset-x-0 -top-1 h-8 sm:h-12 bg-white [clip-path:polygon(0_0,100%_0,100%_100%)] z-20 pointer-events-none"></div>
+      <div class="absolute inset-x-0 -bottom-1 h-8 sm:h-12 bg-white [clip-path:polygon(0_100%,100%_0,100%_100%)] z-20 pointer-events-none"></div>
       
-      <!-- Fondo fotográfico con opacidad y corte geométrico -->
+      <!-- Fondo fotográfico con opacidad -->
       <div class="absolute inset-0 z-0">
         <img 
           src="/images/benchmarks/eda-substation-night.jpg" 
