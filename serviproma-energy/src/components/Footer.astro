@@ -1,0 +1,42 @@
+---
+import Logo from './Logo.astro';
+import { site } from '../config/site';
+import { paths, type Lang } from '../i18n/routes';
+import { t } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = t(lang).common;
+const links = ['home', 'services', 'slrp', 'about', 'experience', 'contact'] as const;
+---
+<footer class="mt-24 border-t border-slate-800 bg-slate-950">
+  <div class="mx-auto grid max-w-7xl gap-12 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <Logo />
+      <p class="mt-5 max-w-sm text-[0.95rem] text-slate-400">{c.footer.tagline}</p>
+    </div>
+    <div>
+      <h2 class="text-base font-semibold text-white">{c.footer.explore}</h2>
+      <ul class="mt-4 space-y-2.5">
+        {links.map((k) => (
+          <li><a class="text-slate-300 hover:text-amber-400" href={paths[k][lang]}>{c.nav[k]}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-base font-semibold text-white">{c.footer.contactTitle}</h2>
+      <ul class="mt-4 space-y-2.5 text-slate-300">
+        <li><a class="hover:text-amber-400" href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><a class="data hover:text-amber-400" href={site.phoneHref}>{site.phone}</a></li>
+        <li><a class="hover:text-amber-400" href={site.whatsappHref} rel="noopener">{c.whatsapp}</a></li>
+        {site.legal.address && <li class="text-slate-400">{site.legal.address}</li>}
+        {site.legal.rif && <li class="text-slate-400">{c.footer.rif}: <span class="data">{site.legal.rif}</span></li>}
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-800">
+    <p class="mx-auto max-w-7xl px-5 py-6 text-sm text-slate-500 sm:px-8">
+      © {new Date().getFullYear()} {site.name} {c.footer.rights}
+    </p>
+  </div>
+</footer>

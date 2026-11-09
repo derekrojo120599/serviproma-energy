@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { projects } from '../content/projects';
+import { paths, type Lang } from '../i18n/routes';
+import { t } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = t(lang);
+const e = c.experience;
+---
+<Base lang={lang} page="experience">
+  <PageHeader title={e.title} lead={e.lead} />
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="text-2xl sm:text-3xl">{e.sectorsTitle}</h2>
+      <div class="mt-10 grid gap-10 md:grid-cols-3 md:gap-0">
+        {e.sectors.map((s) => (
+          <div class="border-t border-slate-700 pt-6 md:border-l md:border-t-0 md:px-8 md:pt-0 md:first:border-l-0 md:first:pl-0">
+            <h3 class="text-xl">{s.title}</h3>
+            <p class="mt-3 text-slate-300">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section border-y border-slate-800 bg-slate-900">
+    <div class="wrap grid gap-12 md:grid-cols-3">
+      <div>
+        <h2 class="text-xl">{e.clientsTitle}</h2>
+        <p class="mt-4 text-slate-300">{e.clients}</p>
+      </div>
+      <div>
+        <h2 class="text-xl">{e.equipmentTitle}</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {e.equipment.map((q) => <li class="data border border-slate-600 px-3 py-1.5 text-sm text-slate-200">{q}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-xl">{e.countriesTitle}</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {e.countries.map((q) => <li class="border border-slate-600 px-3 py-1.5 text-sm text-slate-200">{q}</li>)}
+        </ul>
+        <p class="mt-4 text-[0.95rem] text-slate-400">{e.countriesNote}</p>
+      </div>
+    </div>
+  </section>
+
+  {(projects.length > 0 || import.meta.env.DEV) && (
+    <section class="section">
+      <div class="wrap">
+        <h2 class="text-2xl sm:text-3xl">{e.projectsTitle}</h2>
+        {projects.length > 0 ? (
+          <div class="mt-10 overflow-x-auto">
+            <table class="w-full min-w-[40rem] border-collapse text-left">
+              <thead>
+                <tr class="border-b border-slate-700 text-sm text-slate-400">
+                  <th class="py-3 pr-6 font-medium">{e.projectLabels.client}</th>
+                  <th class="py-3 pr-6 font-medium">{e.projectLabels.country}</th>
+                  <th class="py-3 pr-6 font-medium">{e.projectLabels.voltage}</th>
+                  <th class="py-3 font-medium">{e.projectLabels.scope}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {projects.map((p) => (
+                  <tr class="border-b border-slate-800 align-top">
+                    <td class="py-4 pr-6 text-white">{p.client}</td>
+                    <td class="py-4 pr-6 text-slate-300">{p.country}</td>
+                    <td class="data py-4 pr-6 text-amber-400">{p.voltage}</td>
+                    <td class="py-4 text-slate-300">{p.scope[lang]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p class="mt-6 border border-dashed border-slate-600 p-5 text-slate-400">{e.projectsPending}</p>
+        )}
+      </div>
+    </section>
+  )}
+
+  <CtaBand title={c.home.close.ctaTitle} text={c.home.close.ctaText} button={c.home.close.ctaButton} href={paths.contact[lang]} />
+</Base>

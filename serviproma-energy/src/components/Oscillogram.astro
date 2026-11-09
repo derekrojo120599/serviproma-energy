@@ -1,0 +1,71 @@
+---
+// Oscilograma ilustrativo: corrientes de fase Ia, Ib, Ic en una falla monofásica a tierra
+// a 60 Hz, con apertura tripolar del interruptor. Se calcula en el build; no hay datos reales.
+interface Props { label: string; note: string; fault: string; trip: string }
+const { label, note, fault, trip } = Astro.props;
+
+const W = 640, H = 400;
+const x0 = 56, x1 = 632;          // área de trazado
+const T = 150;                    // ventana en ms (9 ciclos)
+const tFault = 40, tTrip = 106;   // ms
+const rows = [80, 200, 320];      // centros verticales
+const half = 52;                  // alto máximo por canal
+const w = 2 * Math.PI * 60 / 1000; // rad/ms
+const clamp = (v: number) => Math.max(-half, Math.min(half, v));
+const X = (t: number) => x0 + (t / T) * (x1 - x0);
+
+function current(phase: number, t: number): number {
+  const shift = (phase * 2 * Math.PI) / 3;
+  if (t < tFault) return 13 * Math.sin(w * t - shift);
+  if (t < tTrip) {
+    if (phase === 0) {
+      const dc = 34 * Math.exp(-(t - tFault) / 38);
+      return clamp(40 * Math.sin(w * t - 0.5) + dc);
+    }
+    return 14 * Math.sin(w * t - shift);
+  }
+  // Tras la apertura, extinción rápida.
+  const k = Math.exp(-(t - tTrip) / 1.2);
+  const last = phase === 0 ? 40 * Math.sin(w * tTrip - 0.5) + 34 * Math.exp(-(tTrip - tFault) / 38) : 14 * Math.sin(w * tTrip - shift);
+  return clamp(last) * k;
+}
+
+const traces = [0, 1, 2].map((ph) => {
+  const pts: string[] = [];
+  for (let t = 0; t <= T; t += 0.5) pts.push(`${X(t).toFixed(1)} ${(rows[ph] - current(ph, t)).toFixed(1)}`);
+  return 'M' + pts.join(' L');
+});
+const names = ['Ia', 'Ib', 'Ic'];
+const colors = ['#fbbf24', '#cbd5e1', '#64748b'];
+const ticks = [0, 50, 100, 150];
+---
+<figure class="m-0">
+  <svg viewBox={`0 0 ${W} ${H}`} class="block h-auto w-full" role="img" aria-label={label}>
+    <!-- Rejilla de tiempo -->
+    {ticks.map((t) => (
+      <g>
+        <line x1={X(t)} x2={X(t)} y1="16" y2="364" stroke="#1e293b" stroke-width="1" />
+        <text x={X(t)} y="388" text-anchor={t === 0 ? 'start' : t === T ? 'end' : 'middle'} class="data" fill="#94a3b8" font-size="14">{t}{t === T ? ' ms' : ''}</text>
+      </g>
+    ))}
+    <!-- Ejes cero y etiquetas de canal -->
+    {rows.map((y, i) => (
+      <g>
+        <line x1={x0} x2={x1} y1={y} y2={y} stroke="#334155" stroke-width="1" />
+        <text x="6" y={y + 5} class="data" fill={colors[i]} font-size="16" font-weight="500">{names[i]}</text>
+      </g>
+    ))}
+    <!-- Marcadores de evento -->
+    <line x1={X(tFault)} x2={X(tFault)} y1="16" y2="364" stroke="#94a3b8" stroke-width="1.25" stroke-dasharray="4 4" />
+    <line x1={X(tTrip)} x2={X(tTrip)} y1="16" y2="364" stroke="#94a3b8" stroke-width="1.25" stroke-dasharray="4 4" />
+    <!-- Trazos -->
+    {traces.map((d, i) => (
+      <path d={d} pathLength="1" style="--len:1" class:list={['trace', i === 1 && 'trace-b', i === 2 && 'trace-c']} fill="none" stroke={colors[i]} stroke-width={i === 0 ? 2.25 : 1.75} stroke-linejoin="round" />
+    ))}
+  </svg>
+  <figcaption class="mt-5 grid gap-3 text-[0.95rem] text-slate-300 sm:grid-cols-2">
+    <p class="m-0"><span class="data text-amber-400">{tFault} ms</span> · {fault}</p>
+    <p class="m-0"><span class="data text-amber-400">{tTrip} ms</span> · {trip}</p>
+    <p class="m-0 text-slate-400 sm:col-span-2">{label}. {note}</p>
+  </figcaption>
+</figure>

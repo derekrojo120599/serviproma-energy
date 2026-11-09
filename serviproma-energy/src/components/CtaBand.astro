@@ -1,0 +1,13 @@
+---
+interface Props { title: string; text: string; button: string; href: string }
+const { title, text, button, href } = Astro.props;
+---
+<section class="border-y border-slate-800 bg-slate-900">
+  <div class="mx-auto grid max-w-7xl items-center gap-8 px-5 py-14 sm:px-8 md:grid-cols-[1fr_auto]">
+    <div>
+      <h2 class="text-3xl sm:text-4xl">{title}</h2>
+      <p class="mt-4 max-w-2xl text-slate-300">{text}</p>
+    </div>
+    <a {href} class="bg-amber-400 px-7 py-4 text-center text-base font-semibold text-slate-950 transition-colors hover:bg-amber-300">{button}</a>
+  </div>
+</section>

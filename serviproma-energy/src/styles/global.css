@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  /* Paleta del briefing: slate-950 de base, ámbar de energía técnica. */
+  --color-base: #020617;
+  --color-surface: #0b1224;
+  --color-line: #1e293b;
+  --color-muted: #94a3b8;
+  --color-amber-signal: #fbbf24;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--color-base);
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  h1, h2, h3 {
+    @apply text-white font-semibold;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 2px solid var(--color-amber-signal);
+    outline-offset: 3px;
+  }
+  ::selection { background: #fbbf24; color: #020617; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto max-w-7xl px-5 sm:px-8; }
+  .section { @apply py-16 lg:py-24; }
+  .btn-primary { @apply inline-block bg-amber-400 px-7 py-3.5 text-center text-base font-semibold text-slate-950 transition-colors hover:bg-amber-300; }
+  .btn-secondary { @apply inline-block border border-slate-600 px-7 py-3.5 text-center text-base font-semibold text-white transition-colors hover:border-amber-400 hover:text-amber-400 hover:bg-slate-900/60; }
+}
+
+/* Texto de lectura: máximo ~68 caracteres por línea. */
+.measure { max-width: 68ch; }
+
+/* Datos de ingeniería (kV, ms, tiempos): IBM Plex Mono con cifras tabulares. */
+.data { @apply font-mono; font-variant-numeric: tabular-nums; }
+
+/* Único momento animado de la portada: el trazo del oscilograma se dibuja una vez. */
+@keyframes trace {
+  from { stroke-dashoffset: var(--len, 2400); }
+  to { stroke-dashoffset: 0; }
+}
+.trace {
+  stroke-dasharray: var(--len, 2400);
+  animation: trace 2.2s cubic-bezier(0.3, 0.1, 0.2, 1) both;
+}
+.trace-b { animation-delay: 0.25s; }
+.trace-c { animation-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .trace { animation: none; stroke-dasharray: none; }
+  html { scroll-behavior: auto; }
+}

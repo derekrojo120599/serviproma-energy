@@ -1,0 +1,16 @@
+# Dependencias y builds
+node_modules/
+dist/
+.astro/
+.impeccable/live/
+.vscode/
+
+# Logs y temporales
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
