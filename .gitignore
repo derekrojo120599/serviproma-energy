@@ -4,6 +4,7 @@ dist/
 .astro/
 .impeccable/live/
 .vscode/
+.atl/
 
 # Logs y temporales
 *.log

@@ -7,7 +7,9 @@ export const site = {
   phone: '+58 412 725 1017',
   phoneHref: 'tel:+584127251017',
   whatsappHref: 'https://wa.me/584127251017',
-  // Pendiente de entrega por el cliente (RIF, domicilio fiscal, sede).
-  legal: { rif: '', address: '' },
+  legal: {
+    rif: 'J-508883055',
+    address: 'Av. Las Mercedes, Edif. EXPO 3A, Of. 1-A, Caracas, Venezuela',
+  },
   formEndpoint: import.meta.env.PUBLIC_FORM_ENDPOINT ?? '',
 };
