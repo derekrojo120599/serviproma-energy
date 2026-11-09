@@ -1,28 +1,69 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const heroSlides = [
+  {
+    src: '/images/subestacion-valle-montana.jpg',
+    alt: 'Subestación de alta tensión y equipos de patio',
+    label: 'Subestación troncal 765 kV',
+  },
+  {
+    src: '/images/subestacion-porticos.jpg',
+    alt: 'Pórticos y transformadores en subestación de alta tensión',
+    label: 'Pórticos y transformación 500 kV',
+  },
+  {
+    src: '/images/sala-control-tableros.jpg',
+    alt: 'Sala de control con tableros de protección y control',
+    label: 'Sala de control · SAS / RTU',
+  },
+  {
+    src: '/images/tecnicos-lineas-alta-tension.jpg',
+    alt: 'Especialistas de campo en patio de alta tensión',
+    label: 'Pruebas FAT/SAT en campo',
+  },
+  {
+    src: '/images/torre-transmision-ciudad.jpg',
+    alt: 'Líneas de transmisión e infraestructura de alta tensión',
+    label: 'Interconexión y líneas de transmisión',
+  },
+];
 ---
 
 <Layout title="Serviproma Energy | Control, Protecciones y SCADA en Alta Tensión">
   
   <!-- HERO SECTION: IMPACTO INDUSTRIAL Y AUTORIDAD TÉCNICA -->
   <section class="relative min-h-[92vh] flex flex-col justify-between border-b border-slate-800/80 bg-slate-950 overflow-hidden">
-    <!-- Imagen de fondo de alta tensión -->
-    <div class="absolute inset-0 z-0 pointer-events-none">
-      <img 
-        src="/images/subestacion-valle-montana.jpg" 
-        alt="Subestación de alta tensión y equipos de patio" 
-        class="w-full h-full object-cover object-[right_bottom]"
-      />
+    <!-- SLIDER DE FONDO DE ALTA TENSIÓN (Rotación de izquierda a derecha) -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden" id="hero-slider-container">
+      <div id="hero-slider-track" class="relative w-full h-full">
+        {heroSlides.map((slide, idx) => (
+          <div 
+            class={`hero-slide absolute inset-0 w-full h-full will-change-transform ${idx === 0 ? 'active' : ''}`}
+            data-index={idx}
+            data-label={slide.label}
+            style={`opacity: ${idx === 0 ? '1' : '0'}; transform: translateX(${idx === 0 ? '0%' : '-100%'}); z-index: ${idx === 0 ? '1' : '0'};`}
+          >
+            <img 
+              src={slide.src} 
+              alt={slide.alt} 
+              class="w-full h-full object-cover object-[right_bottom]"
+              loading={idx === 0 ? "eager" : "lazy"}
+            />
+          </div>
+        ))}
+      </div>
+
       <!-- Easing gradient continuo: bloque oscuro a la izquierda que se abre nítidamente hacia la subestación -->
       <div 
-        class="absolute inset-0"
+        class="absolute inset-0 z-10"
         style="background: linear-gradient(to right, rgb(2 6 23 / 1) 0%, rgb(2 6 23 / 0.98) 28%, rgb(2 6 23 / 0.88) 42%, rgb(2 6 23 / 0.5) 60%, rgb(2 6 23 / 0.15) 75%, transparent 90%);"
       ></div>
-      <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent z-10"></div>
     </div>
 
     <!-- Contenido Principal del Hero -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-14 relative z-10 w-full my-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10 relative z-10 w-full my-auto">
       <div class="max-w-2xl lg:max-w-3xl space-y-7">
         
         <!-- Badge institucional de alta precisión -->
@@ -57,6 +98,32 @@ import Layout from '../layouts/Layout.astro';
             <span class="text-amber-400 font-bold">↓</span>
           </a>
         </div>
+      </div>
+    </div>
+
+    <!-- Indicadores de Telemetría del Slider (Versión Web) -->
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-4 hidden sm:flex items-center justify-between text-xs text-slate-400">
+      <div class="flex items-center gap-2 font-mono">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+        <span id="slider-caption" class="text-slate-300 text-xs font-semibold tracking-wider uppercase transition-opacity duration-300">
+          Subestación troncal 765 kV
+        </span>
+      </div>
+
+      <!-- Barra de progreso e indicadores interactivos -->
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1.5" id="slider-dots">
+          {heroSlides.map((slide, idx) => (
+            <button 
+              type="button" 
+              class={`slider-dot h-1.5 rounded-full transition-all duration-500 cursor-pointer ${idx === 0 ? 'w-8 bg-amber-400 shadow-sm shadow-amber-400/50' : 'w-3 bg-slate-700 hover:bg-slate-500'}`}
+              data-dot-index={idx}
+              title={slide.label}
+              aria-label={`Ver diapositiva: ${slide.label}`}
+            ></button>
+          ))}
+        </div>
+        <span class="font-mono text-[11px] text-slate-400 ml-1" id="slider-counter">01 / 05</span>
       </div>
     </div>
 
@@ -379,5 +446,132 @@ import Layout from '../layouts/Layout.astro';
 
     </div>
   </section>
+
+  <!-- Script del Slider Hero con Rotación Izquierda a Derecha -->
+  <script>
+    function setupHeroSlider() {
+      const slides = document.querySelectorAll<HTMLElement>('.hero-slide');
+      const dots = document.querySelectorAll<HTMLElement>('.slider-dot');
+      const captionEl = document.getElementById('slider-caption');
+      const counterEl = document.getElementById('slider-counter');
+      
+      if (!slides.length || slides.length <= 1) return;
+
+      let currentIndex = 0;
+      let isAnimating = false;
+      const intervalTime = 5500;
+      const animDuration = 1200;
+      let timer: number | undefined;
+
+      function updateUI(idx: number) {
+        // Actualizar dots
+        dots.forEach((dot, i) => {
+          if (i === idx) {
+            dot.className = 'slider-dot h-1.5 rounded-full transition-all duration-500 cursor-pointer w-8 bg-amber-400 shadow-sm shadow-amber-400/50';
+          } else {
+            dot.className = 'slider-dot h-1.5 rounded-full transition-all duration-500 cursor-pointer w-3 bg-slate-700 hover:bg-slate-500';
+          }
+        });
+
+        // Actualizar contador y leyenda técnica
+        if (counterEl) {
+          counterEl.textContent = `0${idx + 1} / 0${slides.length}`;
+        }
+
+        if (captionEl) {
+          const nextLabel = slides[idx].getAttribute('data-label') || '';
+          captionEl.style.opacity = '0';
+          setTimeout(() => {
+            captionEl.textContent = nextLabel;
+            captionEl.style.opacity = '1';
+          }, 250);
+        }
+      }
+
+      function slideTo(nextIndex: number) {
+        if (isAnimating || nextIndex === currentIndex) return;
+        isAnimating = true;
+
+        const currentSlide = slides[currentIndex];
+        const nextSlide = slides[nextIndex];
+
+        // Preparar slide entrante en la izquierda (-100%) sin transición
+        nextSlide.style.transition = 'none';
+        nextSlide.style.transform = 'translateX(-100%)';
+        nextSlide.style.opacity = '0';
+        nextSlide.style.zIndex = '2';
+        currentSlide.style.zIndex = '1';
+
+        // Forzar reflujo
+        void nextSlide.offsetHeight;
+
+        // Animar: el actual rota hacia la derecha (+100%) y el nuevo entra desde la izquierda (0%)
+        const easing = 'cubic-bezier(0.25, 1, 0.5, 1)';
+        currentSlide.style.transition = `transform ${animDuration}ms ${easing}, opacity ${animDuration}ms ease`;
+        currentSlide.style.transform = 'translateX(100%)';
+        currentSlide.style.opacity = '0';
+
+        nextSlide.style.transition = `transform ${animDuration}ms ${easing}, opacity ${animDuration}ms ease`;
+        nextSlide.style.transform = 'translateX(0%)';
+        nextSlide.style.opacity = '1';
+
+        updateUI(nextIndex);
+
+        setTimeout(() => {
+          // Resetear slide saliente a la izquierda para el próximo ciclo
+          currentSlide.style.transition = 'none';
+          currentSlide.style.transform = 'translateX(-100%)';
+          currentSlide.style.zIndex = '0';
+          currentIndex = nextIndex;
+          isAnimating = false;
+        }, animDuration);
+      }
+
+      function nextSlide() {
+        const next = (currentIndex + 1) % slides.length;
+        slideTo(next);
+      }
+
+      function startAutoPlay() {
+        stopAutoPlay();
+        timer = window.setInterval(nextSlide, intervalTime);
+      }
+
+      function stopAutoPlay() {
+        if (timer) {
+          clearInterval(timer);
+          timer = undefined;
+        }
+      }
+
+      // Eventos de click en los dots
+      dots.forEach((dot) => {
+        dot.addEventListener('click', (e) => {
+          const target = e.currentTarget as HTMLElement;
+          const targetIndex = parseInt(target.getAttribute('data-dot-index') || '0', 10);
+          slideTo(targetIndex);
+          startAutoPlay(); // reiniciar ciclo
+        });
+      });
+
+      // Iniciar autoplay
+      startAutoPlay();
+
+      // Pausar si la pestaña no está visible
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          stopAutoPlay();
+        } else {
+          startAutoPlay();
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupHeroSlider);
+    } else {
+      setupHeroSlider();
+    }
+  </script>
 
 </Layout>
