@@ -1,4 +1,383 @@
 ---
-import HomePage from '../views/HomePage.astro';
+import Layout from '../layouts/Layout.astro';
 ---
-<HomePage lang="es" />
+
+<Layout title="Serviproma Energy | Control, Protecciones y SCADA en Alta Tensión">
+  
+  <!-- HERO SECTION: IMPACTO INDUSTRIAL Y AUTORIDAD TÉCNICA -->
+  <section class="relative min-h-[92vh] flex flex-col justify-between border-b border-slate-800/80 bg-slate-950 overflow-hidden">
+    <!-- Imagen de fondo de alta tensión -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="/images/subestacion-valle-montana.jpg" 
+        alt="Subestación de alta tensión y equipos de patio" 
+        class="w-full h-full object-cover object-[right_bottom]"
+      />
+      <!-- Easing gradient continuo: bloque oscuro a la izquierda que se abre nítidamente hacia la subestación -->
+      <div 
+        class="absolute inset-0"
+        style="background: linear-gradient(to right, rgb(2 6 23 / 1) 0%, rgb(2 6 23 / 0.98) 28%, rgb(2 6 23 / 0.88) 42%, rgb(2 6 23 / 0.5) 60%, rgb(2 6 23 / 0.15) 75%, transparent 90%);"
+      ></div>
+      <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+    </div>
+
+    <!-- Contenido Principal del Hero -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-14 relative z-10 w-full my-auto">
+      <div class="max-w-2xl lg:max-w-3xl space-y-7">
+        
+        <!-- Badge institucional de alta precisión -->
+        <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs font-semibold tracking-wider uppercase">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+          <span>Ingeniería en Sistemas de Potencia · 13.8 kV a 765 kV</span>
+        </div>
+
+        <!-- Titular Principal de Alto Contraste -->
+        <h1 class="text-4xl sm:text-6xl lg:text-[4rem] font-extrabold text-white tracking-tight leading-[1.08]">
+          Control, protecciones y SCADA en alta y extra alta tensión
+        </h1>
+
+        <!-- Bajada de valor técnico directo -->
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-normal max-w-2xl">
+          El respaldo de ingenieros especialistas con más de 35 años operando en subestaciones energizadas y 12 años de trayectoria directa en el Despacho de Carga y Transmisión de CORPOELEC.
+        </p>
+
+        <!-- CTAs sin distracciones -->
+        <div class="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <a 
+            href="/contacto" 
+            class="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded transition-all shadow-lg shadow-amber-500/20 text-center"
+          >
+            Solicitar Evaluación Técnica
+          </a>
+          <a 
+            href="#pilares" 
+            class="px-8 py-4 border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-white font-semibold text-xs uppercase tracking-wider rounded transition-all text-center flex items-center justify-center gap-2"
+          >
+            <span>Ver Pilares de Operación</span>
+            <span class="text-amber-400 font-bold">↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de Métricas y Autoridad Anclada al Hero -->
+    <div class="relative z-10 border-t border-slate-800/80 bg-slate-950/85 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-800/80">
+          <div class="pt-2 sm:pt-0 sm:pr-6">
+            <div class="text-3xl sm:text-4xl font-bold text-white font-['IBM_Plex_Mono'] tracking-tight">+35</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider mt-0.5">Años de experiencia del equipo</div>
+          </div>
+          <div class="pt-2 sm:pt-0 sm:px-6">
+            <div class="text-3xl sm:text-4xl font-bold text-amber-400 font-['IBM_Plex_Mono'] tracking-tight">765 kV</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider mt-0.5">Máxima tensión intervenida</div>
+          </div>
+          <div class="pt-2 sm:pt-0 sm:px-6">
+            <div class="text-3xl sm:text-4xl font-bold text-white font-['IBM_Plex_Mono'] tracking-tight">6 Países</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider mt-0.5">América y África</div>
+          </div>
+          <div class="pt-2 sm:pt-0 sm:pl-6">
+            <div class="text-3xl sm:text-4xl font-bold text-amber-400 font-['IBM_Plex_Mono'] tracking-tight">+20</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider mt-0.5">Grandes industrias atendidas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILAR 1: LA EXPERIENCIA DEL PERSONAL (AUTORIDAD TÉCNICA Y CASOS REALES) -->
+  <section id="pilares" class="py-24 border-b border-slate-800/80 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
+        <div class="lg:col-span-7 space-y-4">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block font-mono">PILAR 01 · RESPALDO HUMANO SENIOR</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            No improvisamos: el respaldo de ingenieros que ya operaron las redes más exigentes
+          </h2>
+          <p class="text-slate-300 text-base leading-relaxed">
+            En sistemas eléctricos de potencia, el valor real no radica en una fecha de registro mercantil, sino en el criterio técnico de los especialistas de campo. Nuestro equipo senior acumula más de 35 años de experiencia combinada resolviendo perturbaciones y comisionando subestaciones de 13.8 kV a 765 kV.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Solvencia de Campo Demostrada</div>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span><strong>12 años directos en CORPOELEC:</strong> Despacho de Carga y Transmisión en Los Andes y Occidente.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span><strong>Industria y petroquímica:</strong> comisionamiento y sistemas de control en PEQUIVEN Metanol de Oriente.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span><strong>Contratistas globales:</strong> experiencia bajo normativas de Elecnor, Transelec y Enel.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 Bloques Técnicos de Especialidad -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded">
+          <div class="text-2xl font-bold text-white font-['IBM_Plex_Mono'] mb-1">765 kV</div>
+          <h3 class="text-sm font-bold text-amber-400 mb-2">Alta y Extra Alta Tensión</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Intervención directa en subestaciones troncales de 765, 400, 230 y 115 kV. Dominio de la dinámica del Sistema Eléctrico Nacional.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded">
+          <div class="text-2xl font-bold text-white font-['IBM_Plex_Mono'] mb-1">FAT / SAT</div>
+          <h3 class="text-sm font-bold text-amber-400 mb-2">Comisionamiento Riguroso</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Inyección secundaria y primaria con maletas de precisión Omicron y Ponovo para calibrar protecciones y evitar disparos erráticos.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded">
+          <div class="text-2xl font-bold text-white font-['IBM_Plex_Mono'] mb-1">IEC 61850</div>
+          <h3 class="text-sm font-bold text-amber-400 mb-2">Subestaciones Digitales</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Configuración de bus de estación (MMS), mensajes GOOSE, RTUs Siemens SICAM y telecontrol hacia centros de despacho.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded">
+          <div class="text-2xl font-bold text-white font-['IBM_Plex_Mono'] mb-1">6 Países</div>
+          <h3 class="text-sm font-bold text-amber-400 mb-2">Alcance Internacional</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Experiencia comprobada en Venezuela, Chile (500 kV y 220 kV), Colombia (230 kV), México, Costa de Marfil y Camerún.
+          </p>
+        </div>
+      </div>
+
+      <!-- Casos Emblemáticos Donde Nuestro Personal Ya Lideró -->
+      <div class="p-6 bg-slate-900 border border-slate-800 rounded">
+        <div class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-4 font-mono">Infraestructura donde nuestro equipo ya demostró resultados técnicos:</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-300">
+          <div class="border-l-2 border-amber-500/50 pl-4">
+            <strong class="text-white block text-sm">S/E Cumbres 500 kV · Chile</strong>
+            <span class="text-slate-400 mt-1 block">ATR 750 MVA: pruebas FAT/SAT y configuración integral del sistema de control para Elecnor.</span>
+          </div>
+          <div class="border-l-2 border-amber-500/50 pl-4">
+            <strong class="text-white block text-sm">PEQUIVEN Metanol · Venezuela</strong>
+            <span class="text-slate-400 mt-1 block">Configuración, comisionamiento y puesta en servicio de control en Planta 1 y Planta 2.</span>
+          </div>
+          <div class="border-l-2 border-amber-500/50 pl-4">
+            <strong class="text-white block text-sm">S/E Kimal y Los Changos 220 kV · Chile</strong>
+            <span class="text-slate-400 mt-1 block">Puesta en servicio de bahías de control y protecciones para Transelec.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PILAR 2: LOS SERVICIOS Y SOLUCIONES TÉCNICAS -->
+  <section class="py-24 border-b border-slate-800/80 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block font-mono">PILAR 02 · ALCANCE TÉCNICO ESPECIALIZADO</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Soluciones de ingeniería para sistemas de potencia
+        </h2>
+        <p class="mt-3 text-slate-400 text-base">
+          Cubrimos el ciclo de vida completo: desde el diagnóstico y la ingeniería de detalle hasta las pruebas en fábrica (FAT) y la energización en terreno (SAT).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Servicio 1 -->
+        <div class="border border-slate-800 bg-slate-950 rounded overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-52 overflow-hidden">
+              <img 
+                src="/images/subestacion-porticos.jpg" 
+                alt="Pórticos y transformadores en subestación de alta tensión" 
+                class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-2 font-mono">Multimarca</div>
+              <h3 class="text-xl font-bold text-white mb-2">Protecciones y Comisionamiento</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Parametrización y pruebas de relés de línea (21/87L), transformador (87T), diferencial de barra (87B), generadores y 50BF en Siemens SIPROTEC 4/5, ABB, GE, SEL y Schneider.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="/servicios#protecciones" class="text-xs font-bold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1 uppercase tracking-wider">
+              Ver alcance de protecciones <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="border border-slate-800 bg-slate-950 rounded overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-52 overflow-hidden">
+              <img 
+                src="/images/sala-control-tableros.jpg" 
+                alt="Sala de control con tableros de protección y control" 
+                class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-2 font-mono">IEC 61850 & Despacho</div>
+              <h3 class="text-xl font-bold text-white mb-2">Automatización y SCADA</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Subestaciones digitales, RTUs Siemens SICAM (A8000, AK3, TM1703), gateways y telecontrol hacia centros de despacho de carga vía protocolos IEC 60870-5-101/104, DNP3 e ICCP.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="/servicios#automatizacion" class="text-xs font-bold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1 uppercase tracking-wider">
+              Ver arquitectura SCADA <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="border border-slate-800 bg-slate-950 rounded overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-52 overflow-hidden">
+              <img 
+                src="/images/refineria-petroleo.jpg" 
+                alt="Refinería y subestaciones de proceso continuo" 
+                class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-2 font-mono">Petroquímica & Refinación</div>
+              <h3 class="text-xl font-bold text-white mb-2">Industria y Petróleo</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Subestaciones de planta y CCM en media y alta tensión. Protección diferencial de grandes motores, generadores de proceso y esquemas de bote de carga rápido para evitar paradas no programadas.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="/servicios#industria" class="text-xs font-bold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1 uppercase tracking-wider">
+              Ver soluciones de planta <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Solución Tecnológica Exclusiva: SLRP -->
+      <div class="mt-12 border border-slate-800 bg-slate-950 rounded p-8 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-widest font-mono mb-2">
+            Desarrollo Especializado
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">
+            SLRP: Sistema de Lectura Remota de Protecciones
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+            Disponibilidad de oscilografías COMTRADE (IEEE C37.111) en su centro de despacho en menos de 2 minutos tras un disparo. Diagnóstico inmediato sin desplazamientos en carretera.
+          </p>
+          <div class="flex items-center gap-4 text-xs font-mono text-slate-400">
+            <span>• Compatible Multimarca</span>
+            <span>• Sincronización GPS</span>
+            <span>• Canal Segregado</span>
+          </div>
+        </div>
+        <div class="shrink-0">
+          <a 
+            href="/slrp" 
+            class="px-6 py-3.5 border border-amber-500/50 bg-amber-500/10 hover:bg-amber-500 hover:text-slate-950 text-amber-400 font-bold text-xs uppercase tracking-wider rounded transition-all inline-block"
+          >
+            Conocer Solución SLRP →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PILAR 3: CIERRE DEL TRATO (POR QUÉ SOMOS LA MEJOR OPCIÓN) -->
+  <section class="py-24 border-b border-slate-800/80 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block font-mono">PILAR 03 · LA DECISIÓN CORRECTA</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Por qué Serviproma es su mejor aliado en sistemas de potencia
+        </h2>
+        <p class="mt-3 text-slate-400 text-base">
+          Resolvemos la brecha entre el centro de despacho y el equipamiento real de la subestación.
+        </p>
+      </div>
+
+      <!-- 3 Razones de Peso para Decidir (Propuesta de Valor Irrefutable) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded">
+          <div class="text-amber-400 font-mono text-xs font-bold mb-3">01 · RECUPERACIÓN REAL</div>
+          <h3 class="text-lg font-bold text-white mb-2">Un SCADA nuevo no basta si el campo no responde</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Renovar el software del despacho no soluciona nada si las RTUs no transmiten o las protecciones no están calibradas. Recuperamos y modernizamos el parque existente (Siemens SICAM, GE, SEL) ahorrándole inversiones millonarias innecesarias.
+          </p>
+        </div>
+
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded">
+          <div class="text-amber-400 font-mono text-xs font-bold mb-3">02 · MARGEN DE ERROR CERO</div>
+          <h3 class="text-lg font-bold text-white mb-2">Experiencia en instalaciones energizadas</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Intervenir bahías de alta tensión sin disparos intempestivos requiere procedimientos rigurosos de seguridad y maniobra. Nuestros ingenieros aplican la disciplina aprendida en subestaciones troncales de 500 kV y 765 kV.
+          </p>
+        </div>
+
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded">
+          <div class="text-amber-400 font-mono text-xs font-bold mb-3">03 · RESPUESTA INMEDIATA</div>
+          <h3 class="text-lg font-bold text-white mb-2">Presencia en Caracas y cobertura nacional</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Sede física operativa en Caracas con capacidad de despliegue en campo para peritajes post-falla, visitas de diagnóstico y comisionamiento en cualquier región del país.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CTA de Cierre con Formulario Directo -->
+      <div class="border border-amber-500/30 bg-gradient-to-b from-slate-900 to-slate-950 rounded p-8 sm:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white">
+              ¿Tiene una contingencia o proyecto en su subestación?
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Consúltenos sobre el levantamiento de su parque de protecciones, la integración de su RTU o el análisis pericial de una falla. Evaluamos su caso sin compromiso.
+            </p>
+            <div class="flex flex-wrap items-center gap-6 text-xs text-slate-400 pt-2">
+              <span class="flex items-center gap-2">
+                <span class="text-amber-400 font-bold">📍</span> Caracas, Venezuela
+              </span>
+              <span class="flex items-center gap-2">
+                <span class="text-amber-400 font-bold">📞</span> +58 412 725 1017
+              </span>
+              <span class="flex items-center gap-2">
+                <span class="text-amber-400 font-bold">✉️</span> admin@servipromaenergy.com
+              </span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 text-center lg:text-right">
+            <a 
+              href="/contacto" 
+              class="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded inline-block transition-all shadow-xl shadow-amber-500/20"
+            >
+              Contactar al Equipo de Ingeniería →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
