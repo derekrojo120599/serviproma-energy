@@ -3,103 +3,242 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Experiencia y Casos de Éxito | Serviproma Energy">
-  <!-- Hero Experiencia -->
-  <section class="py-20 border-b border-slate-800 bg-slate-900/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Track Record Técnico</span>
+  <!-- Hero Experiencia con Fondo Fotográfico -->
+  <section class="relative py-24 border-b border-slate-800 bg-slate-950 overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="/images/subestacion-valle-montana.jpg" 
+        alt="Subestación de alta tensión y equipos de patio" 
+        class="w-full h-full object-cover opacity-20"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/95 to-slate-950"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10">
+      <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-3 font-mono">Track Record Técnico de Campo</span>
       <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Experiencia Comprobada en Campo</h1>
-      <p class="mt-4 text-slate-400 text-base leading-relaxed">
-        Más de tres décadas de experiencia combinada ejecutando proyectos de protecciones, pruebas y automatización para las principales empresas de energía del continente.
+      <p class="mt-4 text-slate-300 text-base leading-relaxed max-w-3xl mx-auto">
+        Más de tres décadas de experiencia combinada ejecutando proyectos de protecciones, pruebas y automatización para las principales empresas de energía e industria pesada del continente.
       </p>
     </div>
   </section>
 
-  <!-- Proyectos Destacados por Región -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+  <!-- Proyectos Destacados por Región con Fotografías Reales -->
+  <section class="py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
       
       <!-- Experiencia en Venezuela -->
       <div>
-        <div class="flex items-center gap-3 mb-6">
-          <span class="text-2xl">🇻🇪</span>
-          <h2 class="text-2xl font-bold text-white">Venezuela · Sector Eléctrico e Industria</h2>
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-3xl">🇻🇪</span>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Venezuela · Sector Eléctrico e Industria</h2>
+            <span class="text-xs text-slate-400 font-mono">CORPOELEC (Despacho & Transmisión) · PEQUIVEN</span>
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <div class="text-xs font-bold text-amber-400 mb-1">2024 · Petroquímica</div>
-            <h3 class="text-lg font-bold text-white mb-2">PEQUIVEN – Metanol de Oriente</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Configuración, comisionamiento y puesta en servicio integral del sistema de control para las subestaciones de Planta 1 y Planta 2.
-            </p>
-            <span class="text-[11px] px-2.5 py-1 rounded bg-slate-800 text-slate-300">Puesta en servicio · Control</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors shadow-xl">
+            <div class="h-52 overflow-hidden relative">
+              <img 
+                src="/images/refineria-petroleo.jpg" 
+                alt="Complejo PEQUIVEN Metanol de Oriente" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                2024 · Petroquímica
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2">PEQUIVEN – Metanol de Oriente</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                  Configuración, comisionamiento y puesta en servicio integral del sistema de control para las subestaciones de Planta 1 y Planta 2.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                <span class="text-[11px] px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono">Puesta en servicio · Control</span>
+                <span class="text-xs text-amber-400 font-mono">13.8 kV a 115 kV</span>
+              </div>
+            </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <div class="text-xs font-bold text-amber-400 mb-1">Sector Eléctrico Nacional</div>
-            <h3 class="text-lg font-bold text-white mb-2">CORPOELEC · Transmisión y Despacho</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Ingeniería de campo y automatización en subestaciones de 115 kV a 765 kV en la región Los Andes y Occidente (Trujillo, Táchira, Mérida, Barinas y Alto Apure).
-            </p>
-            <span class="text-[11px] px-2.5 py-1 rounded bg-slate-800 text-slate-300">Alta y Extra Alta Tensión · SCADA</span>
+          <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors shadow-xl">
+            <div class="h-52 overflow-hidden relative">
+              <img 
+                src="/images/subestacion-valle-montana.jpg" 
+                alt="Subestaciones troncales de CORPOELEC en Los Andes y Occidente" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                Sistema Eléctrico Nacional
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2">CORPOELEC · Transmisión y Despacho</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                  Ingeniería de campo y automatización en subestaciones de 115 kV a 765 kV en la región Los Andes y Occidente (Trujillo, Táchira, Mérida, Barinas y Alto Apure).
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                <span class="text-[11px] px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono">Alta y Extra Alta Tensión</span>
+                <span class="text-xs text-amber-400 font-mono">hasta 765 kV</span>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
 
       <!-- Experiencia en Chile -->
-      <div>
-        <div class="flex items-center gap-3 mb-6">
-          <span class="text-2xl">🇨🇱</span>
-          <h2 class="text-2xl font-bold text-white">Chile · Transmisión, Generación y Minería</h2>
+      <div class="pt-12 border-t border-slate-800/80">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-3xl">🇨🇱</span>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Chile · Transmisión, Generación y Minería</h2>
+            <span class="text-xs text-slate-400 font-mono">Elecnor · Transelec · Enel · Enfragen</span>
+          </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <div class="text-xs font-bold text-amber-400 mb-1">Elecnor · Transmisión</div>
-            <h3 class="text-base font-bold text-white mb-2">S/E Cumbres 500 kV (ATR 750 MVA)</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Pruebas FAT y SAT, configuración avanzada del sistema de control y verificación de esquemas en 500 kV.
-            </p>
+          
+          <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors shadow-xl">
+            <div class="h-44 overflow-hidden relative">
+              <img 
+                src="/images/substation-hero.jpg" 
+                alt="S/E Cumbres 500 kV en Chile" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+              <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold">
+                Elecnor · 500 kV
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-white mb-2">S/E Cumbres 500 kV</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Pruebas FAT y SAT, configuración avanzada del sistema de control y verificación de esquemas en banco ATR de 750 MVA.
+                </p>
+              </div>
+              <span class="text-[11px] font-mono text-amber-400/90 mt-4 block">Banco ATR 750 MVA</span>
+            </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <div class="text-xs font-bold text-amber-400 mb-1">Transelec · Transmisión</div>
-            <h3 class="text-base font-bold text-white mb-2">S/E Kimal y Los Changos 220 kV</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Comisionamiento y puesta en servicio de sistemas de protección y control de bahías de línea y transformación.
-            </p>
+          <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors shadow-xl">
+            <div class="h-44 overflow-hidden relative">
+              <img 
+                src="/images/subestacion-porticos.jpg" 
+                alt="S/E Kimal y Los Changos 220 kV" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+              <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold">
+                Transelec · 220 kV
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-white mb-2">S/E Kimal y Los Changos</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Comisionamiento y puesta en servicio de sistemas de protección y control de bahías de línea y transformación.
+                </p>
+              </div>
+              <span class="text-[11px] font-mono text-amber-400/90 mt-4 block">Bahías de Línea y Trafo</span>
+            </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <div class="text-xs font-bold text-amber-400 mb-1">Enfragen / Enel · Generación</div>
-            <h3 class="text-base font-bold text-white mb-2">Contratos Marco (14 Centrales)</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Mantenimiento especializado, análisis y respuesta ante fallas y capacitación técnica en 9 centrales de Enfragen y 5 térmicas de Enel.
-            </p>
+          <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors shadow-xl">
+            <div class="h-44 overflow-hidden relative">
+              <img 
+                src="/images/control-room.jpg" 
+                alt="Contratos marco con Enfragen y Enel en 14 centrales" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+              <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold">
+                14 Centrales
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-white mb-2">Enfragen / Enel (Contratos Marco)</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Mantenimiento especializado, análisis y respuesta ante fallas y capacitación técnica en 9 centrales de Enfragen y 5 térmicas de Enel.
+                </p>
+              </div>
+              <span class="text-[11px] font-mono text-amber-400/90 mt-4 block">Mantenimiento & Peritajes</span>
+            </div>
           </div>
+
         </div>
       </div>
 
-      <!-- Experiencia en Colombia y México -->
-      <div>
-        <div class="flex items-center gap-3 mb-6">
-          <span class="text-2xl">🌎</span>
-          <h2 class="text-2xl font-bold text-white">Otros Proyectos Internacionales</h2>
+      <!-- Experiencia Internacional (Colombia, México y África) -->
+      <div class="pt-12 border-t border-slate-800/80">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-3xl">🌎</span>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Otros Proyectos Internacionales</h2>
+            <span class="text-xs text-slate-400 font-mono">Colombia · México · Costa de Marfil · Camerún</span>
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <div class="text-xs font-bold text-amber-400 mb-1">Colombia · 230 kV</div>
-            <h3 class="text-base font-bold text-white mb-2">S/E Juana La Avanzadora</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Servicios especializados de ingeniería, pruebas de protecciones y puesta en servicio en subestación de interconexión regional.
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors shadow-xl">
+            <div class="h-48 overflow-hidden relative">
+              <img 
+                src="/images/tecnicos-lineas-alta-tension.jpg" 
+                alt="S/E Juana La Avanzadora en Colombia" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                Colombia · 230 kV
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2">S/E Juana La Avanzadora</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                  Servicios especializados de ingeniería, pruebas de protecciones y puesta en servicio en subestación troncal de interconexión regional.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                <span class="text-[11px] font-mono text-slate-400">Interconexión Troncal</span>
+                <span class="text-xs text-amber-400 font-mono">230 kV</span>
+              </div>
+            </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <div class="text-xs font-bold text-amber-400 mb-1">México y África</div>
-            <h3 class="text-base font-bold text-white mb-2">Proyectos Industriales y Térmicos</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Intervenciones de ingeniería y parametrización en complejos industriales y subestaciones de distribución en Costa de Marfil y Camerún.
-            </p>
+          <div class="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors shadow-xl">
+            <div class="h-48 overflow-hidden relative">
+              <img 
+                src="/images/torre-transmision-ciudad.jpg" 
+                alt="Proyectos en México, Costa de Marfil y Camerún" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                México y África
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2">Proyectos Industriales y Térmicos</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                  Intervenciones de ingeniería y parametrización en complejos industriales y subestaciones de distribución en Costa de Marfil y Camerún.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                <span class="text-[11px] font-mono text-slate-400">Generación & Distribución</span>
+                <span class="text-xs text-amber-400 font-mono">90 kV a 225 kV</span>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
 

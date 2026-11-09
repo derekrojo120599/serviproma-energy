@@ -3,128 +3,242 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Sobre Serviproma Energy · Nuestra Empresa y Trayectoria">
-  <!-- Hero Nosotros -->
-  <section class="py-20 border-b border-slate-800 bg-slate-900/40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Sobre Nosotros</span>
+  <!-- Hero Nosotros con Fondo Fotográfico -->
+  <section class="relative py-24 border-b border-slate-800 bg-slate-950 overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="/images/engineers-field.jpg" 
+        alt="Ingenieros especialistas en subestaciones eléctricas" 
+        class="w-full h-full object-cover opacity-20"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/95 to-slate-950"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10">
+      <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-3 font-mono">Trayectoria de Campo y Solvencia Senior</span>
       <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Experiencia Comprobada en Infraestructura Crítica</h1>
-      <p class="mt-4 text-slate-400 text-base sm:text-lg leading-relaxed">
-        Serviproma Energy C.A. es una empresa venezolana de ingeniería especializada, dedicada al desarrollo de proyectos e integración de soluciones de protecciones eléctricas, automatización, control y SCADA.
+      <p class="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+        Serviproma Energy C.A. es una empresa venezolana de ingeniería especializada, respaldada por ingenieros con más de 35 años operando en subestaciones energizadas y 12 años de trayectoria directa en el Despacho de Carga y Transmisión de CORPOELEC.
       </p>
     </div>
   </section>
 
-  <!-- Misión y Visión -->
-  <section class="py-20 border-b border-slate-800">
+  <!-- Misión y Visión con Fotografías Temáticas -->
+  <section class="py-24 border-b border-slate-800 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 sm:p-10 rounded-2xl bg-slate-900/70 border border-slate-800 relative">
-        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg mb-6">
-          🎯
+      
+      <!-- Misión -->
+      <div class="rounded-2xl bg-slate-900/70 border border-slate-800 overflow-hidden flex flex-col shadow-xl group hover:border-slate-700 transition-colors">
+        <div class="h-48 overflow-hidden relative">
+          <img 
+            src="/images/tecnicos-lineas-alta-tension.jpg" 
+            alt="Ingenieros garantizando la continuidad operativa y seguridad en patio energizado" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+            Compromiso Operativo
+          </span>
         </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Nuestra Misión</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Prestar servicios de ingeniería, comisionamiento y mantenimiento con la máxima excelencia técnica, garantizando la continuidad operativa y la seguridad en infraestructuras de energía críticas en Venezuela y el mundo.
-        </p>
+        <div class="p-8 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-3">Nuestra Misión</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Prestar servicios de ingeniería, comisionamiento y mantenimiento con la máxima excelencia técnica, garantizando la continuidad operativa y la seguridad en infraestructuras de energía críticas en Venezuela y el mundo.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-slate-800 text-xs font-mono text-slate-400">
+            Foco: Cero disparos erráticos · Continuidad de servicio
+          </div>
+        </div>
       </div>
 
-      <div class="p-8 sm:p-10 rounded-2xl bg-slate-900/70 border border-slate-800 relative">
-        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg mb-6">
-          🔭
+      <!-- Visión -->
+      <div class="rounded-2xl bg-slate-900/70 border border-slate-800 overflow-hidden flex flex-col shadow-xl group hover:border-slate-700 transition-colors">
+        <div class="h-48 overflow-hidden relative">
+          <img 
+            src="/images/control-room.jpg" 
+            alt="Centro de despacho y control moderno con tecnología de vanguardia" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+            Vanguardia Tecnológica
+          </span>
         </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Nuestra Visión</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Ser reconocidos como el aliado estratégico y líder en soluciones de ingeniería, comisionamiento y mantenimiento para el sector energético, distinguidos por nuestra innovación tecnológica, compromiso inquebrantable con la seguridad y el desarrollo de operaciones sostenibles.
-        </p>
+        <div class="p-8 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-3">Nuestra Visión</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Ser reconocidos como el aliado estratégico y líder en soluciones de ingeniería, comisionamiento y mantenimiento para el sector energético, distinguidos por nuestra innovación tecnológica, compromiso inquebrantable con la seguridad y el desarrollo de operaciones sostenibles.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-slate-800 text-xs font-mono text-slate-400">
+            Foco: Subestaciones digitales IEC 61850 · SLRP
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Metodología de Ciclo Completo -->
-  <section class="py-20 border-b border-slate-800 bg-slate-900/20">
+  <!-- Metodología de Ciclo Completo con Fotografías por Fase -->
+  <section class="py-24 border-b border-slate-800 bg-slate-900/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Metodología de Trabajo</span>
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2 font-mono">Metodología de Trabajo</span>
         <h2 class="text-3xl font-bold text-white tracking-tight">Cubrimos el ciclo de vida completo</h2>
         <p class="text-slate-400 text-sm mt-3">Un enfoque riguroso desde el levantamiento inicial hasta el soporte post-arranque.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-          <div class="text-amber-400 font-mono text-sm font-bold mb-2">PASO 01</div>
-          <h4 class="text-base font-bold text-white mb-2">Diagnóstico</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Levantamiento exhaustivo del sistema existente y auditoría de la ingeniería instalada en campo.
-          </p>
+        
+        <!-- Paso 1 -->
+        <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
+          <div class="h-32 overflow-hidden relative">
+            <img 
+              src="/images/image10.jpeg" 
+              alt="Auditoría y levantamiento de tableros existentes" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <span class="absolute top-2 left-2 text-amber-400 font-mono text-xs font-bold">PASO 01</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="text-base font-bold text-white mb-2">Diagnóstico</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Levantamiento exhaustivo del sistema existente y auditoría de la ingeniería instalada en campo.
+              </p>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono mt-3">Auditoría en sitio</span>
+          </div>
         </div>
 
-        <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-          <div class="text-amber-400 font-mono text-sm font-bold mb-2">PASO 02</div>
-          <h4 class="text-base font-bold text-white mb-2">Ingeniería</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Estudios de coordinación, ingeniería básica y de detalle, y especificación técnica de suministros.
-          </p>
+        <!-- Paso 2 -->
+        <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
+          <div class="h-32 overflow-hidden relative">
+            <img 
+              src="/images/torre-transmision-ciudad.jpg" 
+              alt="Estudios eléctricos y modelado de sistemas de potencia" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <span class="absolute top-2 left-2 text-amber-400 font-mono text-xs font-bold">PASO 02</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="text-base font-bold text-white mb-2">Ingeniería</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Estudios de coordinación, ingeniería básica y de detalle, y especificación técnica de suministros.
+              </p>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono mt-3">Estudios & Modelado</span>
+          </div>
         </div>
 
-        <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-          <div class="text-amber-400 font-mono text-sm font-bold mb-2">PASO 03</div>
-          <h4 class="text-base font-bold text-white mb-2">Configuración & FAT</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Parametrización de IED, SAS y SCADA, con rigurosas pruebas de aceptación en fábrica antes del despacho.
-          </p>
+        <!-- Paso 3 -->
+        <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
+          <div class="h-32 overflow-hidden relative">
+            <img 
+              src="/images/sala-control-tableros.jpg" 
+              alt="Configuración y pruebas FAT en fábrica" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <span class="absolute top-2 left-2 text-amber-400 font-mono text-xs font-bold">PASO 03</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="text-base font-bold text-white mb-2">Configuración & FAT</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Parametrización de IED, SAS y SCADA, con rigurosas pruebas de aceptación en fábrica antes del despacho.
+              </p>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono mt-3">Pruebas FAT Omicron</span>
+          </div>
         </div>
 
-        <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-          <div class="text-amber-400 font-mono text-sm font-bold mb-2">PASO 04</div>
-          <h4 class="text-base font-bold text-white mb-2">Puesta en Marcha (SAT)</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Comisionamiento en sitio, pruebas punto a punto con despacho, capacitación al cliente y acompañamiento.
-          </p>
+        <!-- Paso 4 -->
+        <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
+          <div class="h-32 overflow-hidden relative">
+            <img 
+              src="/images/subestacion-porticos.jpg" 
+              alt="Puesta en marcha SAT en subestación energizada" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <span class="absolute top-2 left-2 text-amber-400 font-mono text-xs font-bold">PASO 04</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="text-base font-bold text-white mb-2">Puesta en Marcha (SAT)</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Comisionamiento en sitio, pruebas punto a punto con despacho, capacitación al cliente y acompañamiento.
+              </p>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono mt-3">Comisionamiento SAT</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Presencia Geográfica -->
-  <section id="alcance" class="py-20">
+  <!-- Presencia Geográfica y Sede Corporativa con Fotografía -->
+  <section id="alcance" class="py-24 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Alcance Global</span>
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2 font-mono">Alcance Global</span>
           <h2 class="text-3xl font-bold text-white tracking-tight">Experiencia que cruza fronteras</h2>
-          <p class="mt-4 text-slate-400 text-sm leading-relaxed">
+          <p class="mt-4 text-slate-300 text-sm leading-relaxed">
             Nuestro equipo de ingenieros suma intervenciones técnicas y contratos marco de alta exigencia en <strong>6 países en América y África</strong>:
           </p>
           <div class="mt-6 grid grid-cols-2 gap-3 text-xs">
-            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
-              <span>🇻🇪</span> <span class="font-semibold text-white">Venezuela</span> (CORPOELEC, PEQUIVEN)
+            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
+              <span class="text-base">🇻🇪</span> <span class="font-semibold text-white">Venezuela</span> (CORPOELEC, PEQUIVEN)
             </div>
-            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
-              <span>🇨🇱</span> <span class="font-semibold text-white">Chile</span> (Elecnor, Transelec, Enel)
+            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
+              <span class="text-base">🇨🇱</span> <span class="font-semibold text-white">Chile</span> (Elecnor, Transelec, Enel)
             </div>
-            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
-              <span>🇨🇴</span> <span class="font-semibold text-white">Colombia</span> (S/E Juana La Avanzadora)
+            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
+              <span class="text-base">🇨🇴</span> <span class="font-semibold text-white">Colombia</span> (S/E Juana La Avanzadora)
             </div>
-            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
-              <span>🇲🇽</span> <span class="font-semibold text-white">México</span> (Centrales térmicas e industria)
+            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
+              <span class="text-base">🇲🇽</span> <span class="font-semibold text-white">México</span> (Centrales térmicas e industria)
             </div>
-            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
-              <span>🇨🇮</span> <span class="font-semibold text-white">Costa de Marfil</span> (Proyectos de subestaciones)
+            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
+              <span class="text-base">🇨🇮</span> <span class="font-semibold text-white">Costa de Marfil</span> (Subestaciones)
             </div>
-            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
-              <span>🇨🇲</span> <span class="font-semibold text-white">Camerún</span> (Automatización y comisionamiento)
+            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
+              <span class="text-base">🇨🇲</span> <span class="font-semibold text-white">Camerún</span> (Comisionamiento)
             </div>
           </div>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-900/80 border border-slate-800">
-          <h3 class="text-xl font-bold text-white mb-4">Sede y Datos Corporativos</h3>
-          <ul class="space-y-3 text-xs text-slate-300">
-            <li><strong class="text-white">Razón Social:</strong> Serviproma Energy C.A.</li>
-            <li><strong class="text-white">Registro Fiscal:</strong> RIF J-508883055</li>
-            <li><strong class="text-white">Dirección:</strong> Av. Las Mercedes, Edif. EXPO 3A, Of. 1-A, Caracas, Venezuela</li>
-            <li><strong class="text-white">Contacto Ejecutivo:</strong> admin@servipromaenergy.com</li>
-            <li><strong class="text-white">Teléfono Directo:</strong> +58 412 725 1017</li>
-          </ul>
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl">
+          <div class="h-48 overflow-hidden relative">
+            <img 
+              src="/images/subestacion-valle-montana.jpg" 
+              alt="Infraestructura del Sistema Eléctrico Nacional e internacional" 
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-950/80 border border-amber-500/30 text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+              Sede Central
+            </span>
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-white mb-4">Sede y Datos Corporativos</h3>
+            <ul class="space-y-3 text-xs text-slate-300">
+              <li><strong class="text-white">Razón Social:</strong> Serviproma Energy C.A.</li>
+              <li><strong class="text-white">Registro Fiscal:</strong> RIF J-508883055</li>
+              <li><strong class="text-white">Dirección:</strong> Av. Las Mercedes, Edif. EXPO 3A, Of. 1-A, Caracas, Venezuela</li>
+              <li><strong class="text-white">Contacto Ejecutivo:</strong> admin@servipromaenergy.com</li>
+              <li><strong class="text-white">Teléfono Directo:</strong> +58 412 725 1017</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
