@@ -1,1 +1,67 @@
 @import "tailwindcss";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/800.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+@theme {
+  /* =========================================================
+     PALETA OFICIAL DE MARCA · SERVIPROMA LIBRO DE MARCA REV.0
+     ========================================================= */
+  --color-brand-blue: #133a5a;          /* Azul Serviproma (Institucional principal) */
+  --color-brand-amber: #f2a900;         /* Ámbar eléctrico (Acento en baja proporción) */
+  --color-brand-steel: #5a6b7b;         /* Gris acero (Neutro de apoyo / Comercio) */
+  --color-brand-graphite: #1c1f23;      /* Grafito (Oscuro institucional principal) */
+  --color-brand-light: #f4f6f8;         /* Gris claro (Fondo claro / soporte) */
+  --color-brand-blue-accent: #2e6fb0;   /* Azul medio (Acento Capacitación Técnica) */
+
+  /* Tipografías Oficiales del Libro de Marca */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Inter', sans-serif; /* Mapeado a Inter según directriz de manual sin IBM Plex Mono */
+
+  /* Aliasing de utilidades Tailwind estándar a la paleta del Libro de Marca */
+  --color-slate-950: #1c1f23; /* Grafito base oficial */
+  --color-slate-900: #14171a; /* Grafito profundo para cards y contrastes */
+  --color-slate-800: #2b3138; /* Bordes grafito intermedio */
+  --color-slate-700: #3e4751; /* Bordes claros */
+  --color-slate-400: #9aa8b6; /* Textos secundarios en gris */
+  --color-slate-500: #5a6b7b; /* Gris acero oficial */
+  --color-slate-300: #d6dde4; /* Textos de lectura */
+
+  --color-amber-500: #f2a900; /* Ámbar eléctrico oficial */
+  --color-amber-400: #f2a900; /* Ámbar eléctrico oficial */
+  --color-amber-300: #ffc433; /* Resaltado ámbar */
+}
+
+/* Reglas Tipográficas Globales */
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-graphite);
+  color: #ffffff;
+}
+
+/* Títulos, encabezados y piezas comerciales con Montserrat */
+h1, h2, h3, h4, h5, h6,
+.font-heading,
+button,
+.btn,
+.cta-button {
+  font-family: var(--font-heading);
+}
+
+/* El texto de cuerpo, informes y tablas con Inter */
+p, span, a, li, input, textarea, label {
+  font-family: var(--font-sans);
+}
+
+/* Sobrescritura explícita de font-mono para forzar Inter o Montserrat según contexto */
+.font-mono {
+  font-family: var(--font-sans) !important;
+  font-feature-settings: "tnum" on, "zero" on;
+}

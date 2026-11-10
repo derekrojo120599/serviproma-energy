@@ -66,19 +66,16 @@ const targetHref = lang === 'es' ? (
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-slate-950 text-white font-['Public_Sans',sans-serif] selection:bg-amber-400 selection:text-slate-950 antialiased flex flex-col min-h-screen">
+  <body class="bg-[#1C1F23] text-white font-sans selection:bg-[#F2A900] selection:text-[#1C1F23] antialiased flex flex-col min-h-screen">
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+    <header class="sticky top-0 z-50 bg-[#133A5A]/95 backdrop-blur-md border-b border-white/10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <a href={lang === 'es' ? '/' : '/en'} class="flex items-center group">
           <img 
-            src="/images/iso_blanco.png" 
+            src="/images/logo_blanco.png" 
             alt="Serviproma Energy C.A." 
-            class="h-11 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform" 
+            class="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform" 
           />
         </a>
 
@@ -112,7 +109,7 @@ const targetHref = lang === 'es' ? (
 
           <a 
             href={ctaHref} 
-            class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs uppercase font-mono font-bold tracking-wider rounded border border-amber-500/60 bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-slate-950 transition-all"
+            class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs uppercase font-heading font-bold tracking-wider rounded border border-[#F2A900] bg-[#F2A900] text-[#1C1F23] hover:bg-[#ffc433] transition-all shadow-md"
           >
             {ctaLabel}
           </a>
@@ -155,13 +152,13 @@ const targetHref = lang === 'es' ? (
               class="h-14 sm:h-16 w-auto object-contain opacity-95 hover:opacity-100 transition-opacity" 
             />
           </a>
-          <p class="text-xs text-slate-400 leading-relaxed">
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
             {lang === 'es' 
-              ? 'Energía en servicio, con precisión técnica. Ingeniería, protecciones y SCADA en alta y extra alta tensión hasta 765 kV.'
-              : 'Power in service, with technical precision. Protection, automation, control, and SCADA engineering up to 765 kV.'
+              ? 'Mantener la energía en servicio con seguridad, precisión técnica y respaldo integral.'
+              : 'Maintaining energy in service with safety, technical precision, and comprehensive support.'
             }
           </p>
-          <div class="text-xs text-slate-500 font-mono">
+          <div class="text-xs text-slate-400 font-mono">
             RIF J-508883055
           </div>
         </div>
