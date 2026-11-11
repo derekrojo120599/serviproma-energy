@@ -9,7 +9,7 @@ import Layout from '../../layouts/Layout.astro';
   currentPath="/en/contact"
 >
   <!-- Hero Contact -->
-  <section class="relative py-24 border-b border-slate-800 bg-slate-950 overflow-hidden">
+  <section class="relative py-14 sm:py-24 border-b border-slate-800 bg-slate-950 overflow-hidden">
     <div class="absolute inset-0 z-0 pointer-events-none">
       <img 
         src="/images/benchmarks/eda-substation-night.jpg" 
@@ -34,7 +34,7 @@ import Layout from '../../layouts/Layout.astro';
   </section>
 
   <!-- Main Section: Corporate Channels + Engineering Form -->
-  <section class="py-24 bg-slate-950 border-b border-slate-800">
+  <section class="py-14 sm:py-24 bg-slate-950 border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -152,13 +152,15 @@ import Layout from '../../layouts/Layout.astro';
               </p>
             </div>
 
-            <form class="space-y-6">
+            <form id="contact-form-en" class="space-y-6">
               
               <!-- Contact Details -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-mono font-medium text-slate-300 mb-2">Full Name *</label>
+                  <label for="c-name-en" class="block text-xs font-mono font-medium text-slate-300 mb-2">Full Name *</label>
                   <input 
+                    id="c-name-en"
+                    name="name"
                     type="text" 
                     required 
                     class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
@@ -166,8 +168,10 @@ import Layout from '../../layouts/Layout.astro';
                   />
                 </div>
                 <div>
-                  <label class="block text-xs font-mono font-medium text-slate-300 mb-2">Company / Utility *</label>
+                  <label for="c-company-en" class="block text-xs font-mono font-medium text-slate-300 mb-2">Company / Utility *</label>
                   <input 
+                    id="c-company-en"
+                    name="company"
                     type="text" 
                     required 
                     class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
@@ -178,8 +182,10 @@ import Layout from '../../layouts/Layout.astro';
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-mono font-medium text-slate-300 mb-2">Corporate Email *</label>
+                  <label for="c-email-en" class="block text-xs font-mono font-medium text-slate-300 mb-2">Corporate Email *</label>
                   <input 
+                    id="c-email-en"
+                    name="email"
                     type="email" 
                     required 
                     class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
@@ -187,8 +193,10 @@ import Layout from '../../layouts/Layout.astro';
                   />
                 </div>
                 <div>
-                  <label class="block text-xs font-mono font-medium text-slate-300 mb-2">Direct Phone Number *</label>
+                  <label for="c-phone-en" class="block text-xs font-mono font-medium text-slate-300 mb-2">Direct Phone Number *</label>
                   <input 
+                    id="c-phone-en"
+                    name="phone"
                     type="tel" 
                     required
                     class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors font-mono"
@@ -198,55 +206,57 @@ import Layout from '../../layouts/Layout.astro';
               </div>
 
               <!-- Technical Parameters -->
-              <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-4">
+              <div class="p-4 sm:p-5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-4">
                 <div class="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider">
                   Technical Facility Parameters
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-[11px] font-mono text-slate-400 mb-1.5">Primary Voltage Level</label>
-                    <select class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500">
-                      <option value="765">Extra-High Voltage (765 kV – 400 kV)</option>
-                      <option value="230">High Voltage (230 kV – 115 kV)</option>
-                      <option value="69">Subtransmission (69 kV – 34.5 kV)</option>
-                      <option value="13">Medium Voltage / Industrial (13.8 kV – 4.16 kV)</option>
-                      <option value="other">Multiple Voltages / Not Applicable</option>
+                    <label for="c-voltage-en" class="block text-xs font-mono text-slate-300 mb-1.5">Primary Voltage Level</label>
+                    <select id="c-voltage-en" name="voltage" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500">
+                      <option value="Extra-High Voltage (765 kV – 400 kV)">Extra-High Voltage (765 kV – 400 kV)</option>
+                      <option value="High Voltage (230 kV – 115 kV)">High Voltage (230 kV – 115 kV)</option>
+                      <option value="Subtransmission (69 kV – 34.5 kV)">Subtransmission (69 kV – 34.5 kV)</option>
+                      <option value="Medium Voltage / Industrial (13.8 kV – 4.16 kV)">Medium Voltage / Industrial (13.8 kV – 4.16 kV)</option>
+                      <option value="Multiple Voltages / Not Applicable">Multiple Voltages / Not Applicable</option>
                     </select>
                   </div>
 
                   <div>
-                    <label class="block text-[11px] font-mono text-slate-400 mb-1.5">Facility Type</label>
-                    <select class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500">
-                      <option value="subestacion">Transmission / Dispatch Substation</option>
-                      <option value="generacion">Power Generation Plant (Thermal / Hydro)</option>
-                      <option value="petroleo">Refinery / Petrochemical / Upstream</option>
-                      <option value="industria">Steel / Mining / Heavy Industrial Plant</option>
-                      <option value="other">Other Industrial Sector</option>
+                    <label for="c-facility-en" class="block text-xs font-mono text-slate-300 mb-1.5">Facility Type</label>
+                    <select id="c-facility-en" name="facility" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500">
+                      <option value="Transmission / Dispatch Substation">Transmission / Dispatch Substation</option>
+                      <option value="Power Generation Plant (Thermal / Hydro)">Power Generation Plant (Thermal / Hydro)</option>
+                      <option value="Refinery / Petrochemical / Upstream">Refinery / Petrochemical / Upstream</option>
+                      <option value="Steel / Mining / Heavy Industrial Plant">Steel / Mining / Heavy Industrial Plant</option>
+                      <option value="Other Industrial Sector">Other Industrial Sector</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-[11px] font-mono text-slate-400 mb-1.5">Required Service or Discipline *</label>
-                  <select required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500">
+                  <label for="c-service-en" class="block text-xs font-mono text-slate-300 mb-1.5">Required Service or Discipline *</label>
+                  <select id="c-service-en" name="service" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500">
                     <option value="">Select scope...</option>
-                    <option value="protections">Electrical Protections & FAT/SAT Testing (Omicron)</option>
-                    <option value="scada">Substation Automation (IEC 61850) & RTU Gateways (SICAM)</option>
-                    <option value="slrp">SLRP System Implementation (Remote COMTRADE Retrieval)</option>
-                    <option value="studies">Power System Studies: Coordination (TCC), Short-Circuit & Flow</option>
-                    <option value="peritaje">Post-Fault Root Cause & Trip Investigation</option>
-                    <option value="mantenimiento">Preventive / Corrective Maintenance Framework Contract</option>
+                    <option value="Electrical Protections & FAT/SAT Testing (Omicron)">Electrical Protections & FAT/SAT Testing (Omicron)</option>
+                    <option value="Substation Automation (IEC 61850) & RTU Gateways (SICAM)">Substation Automation (IEC 61850) & RTU Gateways (SICAM)</option>
+                    <option value="SLRP System Implementation (Remote COMTRADE Retrieval)">SLRP System Implementation (Remote COMTRADE Retrieval)</option>
+                    <option value="Power System Studies: Coordination (TCC), Short-Circuit & Flow">Power System Studies: Coordination (TCC), Short-Circuit & Flow</option>
+                    <option value="Post-Fault Root Cause & Trip Investigation">Post-Fault Root Cause & Trip Investigation</option>
+                    <option value="Preventive / Corrective Maintenance Framework Contract">Preventive / Corrective Maintenance Framework Contract</option>
                   </select>
                 </div>
               </div>
 
               <!-- Scope Description -->
               <div>
-                <label class="block text-xs font-mono font-medium text-slate-300 mb-2">
+                <label for="c-details-en" class="block text-xs font-mono font-medium text-slate-300 mb-2">
                   Project Scope or Operational Issue Description *
                 </label>
                 <textarea 
+                  id="c-details-en"
+                  name="details"
                   required 
                   rows="4" 
                   class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
@@ -254,16 +264,27 @@ import Layout from '../../layouts/Layout.astro';
                 ></textarea>
               </div>
 
-              <!-- Submit Button -->
-              <button 
-                type="submit" 
-                class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-xl shadow-amber-500/20 active:scale-98 flex items-center justify-center gap-2"
-              >
-                <span>Submit Request to Senior Engineering Team</span>
-                <span class="font-bold">→</span>
-              </button>
+              <!-- Submit Buttons -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button 
+                  type="submit" 
+                  class="w-full py-3.5 px-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-xl shadow-amber-500/20 active:scale-98 flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <span>Send via Email</span>
+                  <span class="font-bold">→</span>
+                </button>
+                <button 
+                  type="button" 
+                  id="contact-whatsapp-btn-en"
+                  class="w-full py-3.5 px-4 border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <span>Send via WhatsApp</span>
+                </button>
+              </div>
 
-              <div class="text-[11px] text-slate-500 text-center font-mono">
+              <div id="contact-feedback-en" class="hidden p-3.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 text-xs font-mono leading-relaxed" role="status" aria-live="polite"></div>
+
+              <div class="text-xs text-slate-400 text-center font-mono">
                 All technical data is handled under strict professional confidentiality.
               </div>
 
@@ -317,7 +338,66 @@ import Layout from '../../layouts/Layout.astro';
         </div>
 
       </div>
-
     </div>
   </section>
+
+  <script>
+    const formEn = document.getElementById('contact-form-en') as HTMLFormElement | null;
+    const waBtnEn = document.getElementById('contact-whatsapp-btn-en');
+    const feedbackEn = document.getElementById('contact-feedback-en');
+
+    function buildPayloadEn() {
+      const name = (document.getElementById('c-name-en') as HTMLInputElement)?.value.trim() || '';
+      const company = (document.getElementById('c-company-en') as HTMLInputElement)?.value.trim() || '';
+      const email = (document.getElementById('c-email-en') as HTMLInputElement)?.value.trim() || '';
+      const phone = (document.getElementById('c-phone-en') as HTMLInputElement)?.value.trim() || '';
+      const voltage = (document.getElementById('c-voltage-en') as HTMLSelectElement)?.value || '';
+      const facility = (document.getElementById('c-facility-en') as HTMLSelectElement)?.value || '';
+      const service = (document.getElementById('c-service-en') as HTMLSelectElement)?.value || '';
+      const details = (document.getElementById('c-details-en') as HTMLTextAreaElement)?.value.trim() || '';
+
+      const subject = `[Technical Assessment] ${service || 'General Inquiry'} - ${company || name}`;
+      const body = [
+        `Technical Assessment Request — Serviproma Energy`,
+        `--------------------------------------------------`,
+        `Name: ${name}`,
+        `Company / Utility: ${company}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Voltage Level: ${voltage}`,
+        `Facility Type: ${facility}`,
+        `Discipline: ${service}`,
+        ``,
+        `Technical Scope / Details:`,
+        details,
+      ].join('\n');
+
+      return { subject, body };
+    }
+
+    function showFeedbackEn(msg: string) {
+      if (!feedbackEn) return;
+      feedbackEn.textContent = msg;
+      feedbackEn.classList.remove('hidden');
+    }
+
+    if (formEn) {
+      formEn.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!formEn.reportValidity()) return;
+        const { subject, body } = buildPayloadEn();
+        window.location.href = `mailto:admin@servipromaenergy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        showFeedbackEn('✓ Technical inquiry drafted in your email client for admin@servipromaenergy.com.');
+      });
+    }
+
+    if (waBtnEn && formEn) {
+      waBtnEn.addEventListener('click', () => {
+        if (!formEn.reportValidity()) return;
+        const { body } = buildPayloadEn();
+        window.open(`https://wa.me/584127251017?text=${encodeURIComponent(body)}`, '_blank', 'noopener,noreferrer');
+        showFeedbackEn('✓ Opening Engineering WhatsApp with your facility summary.');
+      });
+    }
+  </script>
 </Layout>

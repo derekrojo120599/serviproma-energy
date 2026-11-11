@@ -9,7 +9,7 @@ import Layout from '../../layouts/Layout.astro';
   currentPath="/en/slrp"
 >
   <!-- Hero SLRP with Control Room Background -->
-  <section class="relative py-24 border-b border-slate-800 bg-slate-950 overflow-hidden">
+  <section class="relative py-14 sm:py-24 border-b border-slate-800 bg-slate-950 overflow-hidden">
     <div class="absolute inset-0 z-0 pointer-events-none">
       <img 
         src="/images/control-room.jpg" 
@@ -46,7 +46,7 @@ import Layout from '../../layouts/Layout.astro';
   </section>
 
   <!-- Conventional Operation vs SLRP Solution -->
-  <section class="py-24 border-b border-slate-800 bg-slate-950">
+  <section class="py-14 sm:py-24 border-b border-slate-800 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
@@ -93,7 +93,7 @@ import Layout from '../../layouts/Layout.astro';
           <div class="rounded-xl overflow-hidden border border-amber-500/30 shadow-2xl">
             <div class="h-56 overflow-hidden relative">
               <img 
-                src="/images/benchmarks/scadatech-sistemas.png" 
+                src="/images/benchmarks/scadatech-sistemas.webp" 
                 alt="Automated COMTRADE oscillograms delivered to desktop in 2 minutes" 
                 class="w-full h-full object-cover"
               />
@@ -129,7 +129,7 @@ import Layout from '../../layouts/Layout.astro';
   </section>
 
   <!-- 4-Level Architecture -->
-  <section id="how-it-works" class="py-24 border-b border-slate-800 bg-slate-900/40">
+  <section id="how-it-works" class="py-14 sm:py-24 border-b border-slate-800 bg-slate-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2 font-mono">System Architecture</span>
@@ -191,7 +191,7 @@ import Layout from '../../layouts/Layout.astro';
         <div class="rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col group hover:border-slate-700 transition-colors">
           <div class="h-36 overflow-hidden relative">
             <img 
-              src="/images/benchmarks/scadatech-telecom.png" 
+              src="/images/benchmarks/scadatech-telecom.webp" 
               alt="Industrial networking switches and OPGW fiber optic links" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -271,7 +271,7 @@ import Layout from '../../layouts/Layout.astro';
   </section>
 
   <!-- Contact Form SLRP -->
-  <section id="contact-slrp" class="py-24 bg-slate-950 relative overflow-hidden">
+  <section id="contact-slrp" class="py-14 sm:py-24 bg-slate-950 relative overflow-hidden">
     <div class="absolute inset-0 z-0 pointer-events-none">
       <img 
         src="/images/benchmarks/eda-substation-night.jpg" 
@@ -285,32 +285,90 @@ import Layout from '../../layouts/Layout.astro';
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-4">
         Custom Utility Implementation
       </div>
-      <h2 class="text-3xl font-bold text-white mb-4">Deploy SLRP Across Your Power Grid</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Deploy SLRP Across Your Power Grid</h2>
       <p class="text-slate-300 text-sm mb-8">Consult with us regarding your installed protection relay base to evaluate immediate remote retrieval feasibility.</p>
       
-      <div class="p-8 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-800 text-left shadow-2xl backdrop-blur-sm">
+      <form id="slrp-form-en" class="p-6 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-800 text-left shadow-2xl backdrop-blur-sm">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
-            <input type="text" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="John Doe, P.E." />
+            <label for="s-name-en" class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
+            <input id="s-name-en" type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="John Doe, P.E." />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Company / Utility *</label>
-            <input type="text" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="Transmission Utility / Industrial Facility" />
+            <label for="s-company-en" class="block text-xs font-semibold text-slate-300 mb-1.5">Company / Utility *</label>
+            <input id="s-company-en" type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="Transmission Utility / Industrial Facility" />
           </div>
         </div>
         <div class="mb-4">
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Corporate Email *</label>
-          <input type="email" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="jdoe@utility.com" />
+          <label for="s-email-en" class="block text-xs font-semibold text-slate-300 mb-1.5">Corporate Email *</label>
+          <input id="s-email-en" type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="jdoe@utility.com" />
         </div>
         <div class="mb-6">
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Facility Details (Number of substations, relay models, voltage levels)</label>
-          <textarea rows="3" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="We operate 4 substations at 115 kV with Siemens SIPROTEC 4 and GE Multilin relays..."></textarea>
+          <label for="s-details-en" class="block text-xs font-semibold text-slate-300 mb-1.5">Facility Details (Number of substations, relay models, voltage levels) *</label>
+          <textarea id="s-details-en" rows="3" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="We operate 4 substations at 115 kV with Siemens SIPROTEC 4 and GE Multilin relays..."></textarea>
         </div>
-        <button class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-xl shadow-amber-500/20 active:scale-95">
-          Submit SLRP Inquiry →
-        </button>
-      </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button type="submit" class="w-full py-3.5 px-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-xl shadow-amber-500/20 active:scale-95 cursor-pointer">
+            Send via Email →
+          </button>
+          <button type="button" id="slrp-whatsapp-btn-en" class="w-full py-3.5 px-4 border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer">
+            Request Demo via WhatsApp
+          </button>
+        </div>
+        <div id="slrp-feedback-en" class="hidden mt-4 p-3.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 text-xs font-mono leading-relaxed" role="status" aria-live="polite"></div>
+      </form>
     </div>
   </section>
+
+  <script>
+    const slrpFormEn = document.getElementById('slrp-form-en') as HTMLFormElement | null;
+    const slrpWaEn = document.getElementById('slrp-whatsapp-btn-en');
+    const slrpFeedbackEn = document.getElementById('slrp-feedback-en');
+
+    function buildSlrpPayloadEn() {
+      const name = (document.getElementById('s-name-en') as HTMLInputElement)?.value.trim() || '';
+      const company = (document.getElementById('s-company-en') as HTMLInputElement)?.value.trim() || '';
+      const email = (document.getElementById('s-email-en') as HTMLInputElement)?.value.trim() || '';
+      const details = (document.getElementById('s-details-en') as HTMLTextAreaElement)?.value.trim() || '';
+
+      const subject = `[SLRP Demo / Feasibility] - ${company || name}`;
+      const body = [
+        `SLRP Technical Inquiry — Serviproma Energy`,
+        `-------------------------------------------`,
+        `Name: ${name}`,
+        `Company / Utility: ${company}`,
+        `Email: ${email}`,
+        ``,
+        `Protection Relay Base Details:`,
+        details,
+      ].join('\n');
+
+      return { subject, body };
+    }
+
+    if (slrpFormEn) {
+      slrpFormEn.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!slrpFormEn.reportValidity()) return;
+        const { subject, body } = buildSlrpPayloadEn();
+        window.location.href = `mailto:admin@servipromaenergy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        if (slrpFeedbackEn) {
+          slrpFeedbackEn.textContent = '✓ SLRP inquiry drafted in your email client for admin@servipromaenergy.com.';
+          slrpFeedbackEn.classList.remove('hidden');
+        }
+      });
+    }
+
+    if (slrpWaEn && slrpFormEn) {
+      slrpWaEn.addEventListener('click', () => {
+        if (!slrpFormEn.reportValidity()) return;
+        const { body } = buildSlrpPayloadEn();
+        window.open(`https://wa.me/584127251017?text=${encodeURIComponent(body)}`, '_blank', 'noopener,noreferrer');
+        if (slrpFeedbackEn) {
+          slrpFeedbackEn.textContent = '✓ Opening Engineering WhatsApp to coordinate your SLRP demonstration.';
+          slrpFeedbackEn.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
 </Layout>

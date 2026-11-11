@@ -34,7 +34,7 @@ const heroSlides = [
   
   <!-- HERO SECTION: IMPACTO INDUSTRIAL Y AUTORIDAD TÉCNICA -->
   <section class="relative min-h-[92vh] flex flex-col justify-between border-b border-slate-800/80 bg-slate-950 overflow-hidden">
-    <!-- SLIDER DE FONDO DE ALTA TENSIÓN (Rotación de izquierda a derecha) -->
+    <!-- SLIDER DE FONDO DE ALTA TENSIÓN (Rotación adaptativa: vertical en mobile, horizontal en desktop) -->
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden" id="hero-slider-container">
       <div id="hero-slider-track" class="relative w-full h-full">
         {heroSlides.map((slide, idx) => (
@@ -42,57 +42,61 @@ const heroSlides = [
             class={`hero-slide absolute inset-0 w-full h-full will-change-transform ${idx === 0 ? 'active' : ''}`}
             data-index={idx}
             data-label={slide.label}
-            style={`opacity: ${idx === 0 ? '1' : '0'}; transform: translateX(${idx === 0 ? '0%' : '-100%'}); z-index: ${idx === 0 ? '1' : '0'};`}
+            style={`opacity: ${idx === 0 ? '1' : '0'}; z-index: ${idx === 0 ? '1' : '0'};`}
           >
             <img 
               src={slide.src} 
               alt={slide.alt} 
-              class="w-full h-full object-cover object-[right_bottom]"
+              class="w-full h-full object-cover object-center md:object-[right_bottom]"
               loading={idx === 0 ? "eager" : "lazy"}
             />
           </div>
         ))}
       </div>
 
-      <!-- Easing gradient continuo oficial: Grafito institucional #1C1F23 a la izquierda abriéndose hacia la foto -->
+      <!-- Degradado institucional: vertical en mobile con corte de luz suave para que se aprecie la foto sin perder legibilidad, horizontal en desktop -->
       <div 
-        class="absolute inset-0 z-10"
+        class="absolute inset-0 z-10 block md:hidden"
+        style="background: linear-gradient(to bottom, rgb(28 31 35 / 0.96) 0%, rgb(28 31 35 / 0.90) 38%, rgb(28 31 35 / 0.65) 60%, rgb(28 31 35 / 0.25) 80%, rgb(28 31 35 / 0.9) 100%);"
+      ></div>
+      <div 
+        class="absolute inset-0 z-10 hidden md:block"
         style="background: linear-gradient(to right, rgb(28 31 35 / 1) 0%, rgb(28 31 35 / 0.98) 28%, rgb(28 31 35 / 0.88) 42%, rgb(28 31 35 / 0.5) 60%, rgb(28 31 35 / 0.15) 75%, transparent 90%);"
       ></div>
-      <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#1C1F23] via-[#1C1F23]/70 to-transparent z-10"></div>
+      <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#1C1F23] via-[#1C1F23]/80 to-transparent z-10"></div>
     </div>
 
     <!-- Contenido Principal del Hero -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10 relative z-10 w-full my-auto">
-      <div class="max-w-2xl lg:max-w-3xl space-y-7">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-24 pb-8 sm:pb-10 relative z-10 w-full my-auto">
+      <div class="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-7">
         
         <!-- Badge institucional de alta precisión -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-amber-500/30 bg-slate-900/80 text-amber-400 text-xs font-mono font-medium tracking-wider uppercase">
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3 rounded border border-amber-500/30 bg-slate-900/80 text-amber-400 text-[11px] sm:text-xs font-mono font-medium tracking-wider uppercase">
           <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
           <span>Ingeniería en Sistemas de Potencia · 13.8 kV a 765 kV</span>
         </div>
 
         <!-- Titular Principal de Alto Contraste -->
-        <h1 class="text-4xl sm:text-6xl lg:text-[4rem] font-extrabold text-white tracking-tight leading-[1.08]">
+        <h1 class="text-3xl sm:text-6xl lg:text-[4rem] font-extrabold text-white tracking-tight leading-[1.12] sm:leading-[1.08]">
           Control, protecciones y SCADA en alta y extra alta tensión
         </h1>
 
         <!-- Bajada de valor técnico directo -->
-        <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-normal max-w-2xl">
+        <p class="text-slate-300 text-sm sm:text-lg leading-relaxed font-normal max-w-2xl">
           El respaldo de ingenieros especialistas con más de 35 años operando en subestaciones energizadas y 12 años de trayectoria directa en el Despacho de Carga y Transmisión de CORPOELEC.
         </p>
 
         <!-- CTAs sin distracciones -->
-        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+        <div class="pt-1 sm:pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
           <a 
             href="/contacto" 
-            class="px-7 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider rounded border border-amber-500 transition-all text-center"
+            class="px-5 py-3 sm:px-7 sm:py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider rounded border border-amber-500 transition-all text-center shadow-lg shadow-amber-500/10"
           >
             Solicitar Evaluación Técnica
           </a>
           <a 
             href="#pilares" 
-            class="px-7 py-3.5 border border-slate-700 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-mono text-xs uppercase tracking-wider rounded transition-all text-center flex items-center justify-center gap-2"
+            class="px-5 py-3 sm:px-7 sm:py-3.5 border border-slate-700 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-mono text-xs uppercase tracking-wider rounded transition-all text-center flex items-center justify-center gap-2"
           >
             <span>Pilares de Operación</span>
             <span class="text-amber-400 font-mono">↓</span>
@@ -101,11 +105,11 @@ const heroSlides = [
       </div>
     </div>
 
-    <!-- Indicadores de Telemetría del Slider (Versión Web) -->
-    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-4 hidden sm:flex items-center justify-between text-xs text-slate-400">
+    <!-- Indicadores de Telemetría del Slider (Mobile + Web) -->
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-3 flex items-center justify-between text-xs text-slate-400">
       <div class="flex items-center gap-2 font-mono">
         <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-        <span id="slider-caption" class="text-slate-300 text-xs font-semibold tracking-wider uppercase transition-opacity duration-300">
+        <span id="slider-caption" class="text-slate-300 text-[11px] sm:text-xs font-semibold tracking-wider uppercase transition-opacity duration-300">
           Subestación troncal 765 kV
         </span>
       </div>
@@ -116,14 +120,14 @@ const heroSlides = [
           {heroSlides.map((slide, idx) => (
             <button 
               type="button" 
-              class={`slider-dot h-1.5 rounded-full transition-all duration-500 cursor-pointer ${idx === 0 ? 'w-8 bg-amber-400 shadow-sm shadow-amber-400/50' : 'w-3 bg-slate-700 hover:bg-slate-500'}`}
+              class={`slider-dot h-1.5 rounded-full transition-all duration-500 cursor-pointer ${idx === 0 ? 'w-6 sm:w-8 bg-amber-400 shadow-sm shadow-amber-400/50' : 'w-2.5 sm:w-3 bg-slate-700 hover:bg-slate-500'}`}
               data-dot-index={idx}
               title={slide.label}
               aria-label={`Ver diapositiva: ${slide.label}`}
             ></button>
           ))}
         </div>
-        <span class="font-mono text-[11px] text-slate-400 ml-1" id="slider-counter">01 / 05</span>
+        <span class="font-mono text-[10px] sm:text-[11px] text-slate-400 ml-1" id="slider-counter">01 / 05</span>
       </div>
     </div>
 
@@ -153,7 +157,7 @@ const heroSlides = [
   </section>
 
   <!-- PILAR 1: LA EXPERIENCIA DEL PERSONAL (AUTORIDAD TÉCNICA Y CASOS REALES) -->
-  <section id="pilares" class="py-24 border-b border-slate-800/80 bg-slate-950">
+  <section id="pilares" class="py-14 sm:py-24 border-b border-slate-800/80 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
@@ -330,7 +334,7 @@ const heroSlides = [
   </section>
 
   <!-- PILAR 2: LOS SERVICIOS Y SOLUCIONES TÉCNICAS -->
-  <section class="py-24 border-b border-slate-800/80 bg-slate-900/40">
+  <section class="py-14 sm:py-24 border-b border-slate-800/80 bg-slate-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mb-16">
@@ -375,7 +379,7 @@ const heroSlides = [
           <div>
             <div class="h-52 overflow-hidden">
               <img 
-                src="/images/benchmarks/scadatech-sistemas.png" 
+                src="/images/benchmarks/scadatech-sistemas.webp" 
                 alt="Pantallas HMI y supervisión SCADA de subestación en tiempo real" 
                 class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
               />
@@ -436,18 +440,18 @@ const heroSlides = [
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
               Disponibilidad de oscilografías COMTRADE (IEEE C37.111) en su centro de despacho en menos de 2 minutos tras un disparo. Diagnóstico inmediato sin desplazamientos en carretera y sin tiempos ciegos de operación.
             </p>
-            <div class="grid grid-cols-3 gap-3 mb-6">
-              <div class="p-3 bg-slate-900 border border-slate-800 rounded text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+              <div class="p-3 bg-slate-900 border border-slate-800 rounded text-center flex sm:block items-center justify-between px-4 sm:px-3">
                 <div class="text-amber-400 font-mono font-bold text-lg sm:text-xl">~2 min</div>
-                <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5 font-mono">Disponibilidad</div>
+                <div class="text-[11px] sm:text-[10px] text-slate-400 uppercase tracking-wider sm:mt-0.5 font-mono">Disponibilidad</div>
               </div>
-              <div class="p-3 bg-slate-900 border border-slate-800 rounded text-center">
+              <div class="p-3 bg-slate-900 border border-slate-800 rounded text-center flex sm:block items-center justify-between px-4 sm:px-3">
                 <div class="text-white font-mono font-bold text-lg sm:text-xl">COMTRADE</div>
-                <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5 font-mono">IEEE C37.111</div>
+                <div class="text-[11px] sm:text-[10px] text-slate-400 uppercase tracking-wider sm:mt-0.5 font-mono">IEEE C37.111</div>
               </div>
-              <div class="p-3 bg-slate-900 border border-slate-800 rounded text-center">
+              <div class="p-3 bg-slate-900 border border-slate-800 rounded text-center flex sm:block items-center justify-between px-4 sm:px-3">
                 <div class="text-amber-400 font-mono font-bold text-lg sm:text-xl">Multimarca</div>
-                <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5 font-mono">Siemens/SEL/GE</div>
+                <div class="text-[11px] sm:text-[10px] text-slate-400 uppercase tracking-wider sm:mt-0.5 font-mono">Siemens/SEL/GE</div>
               </div>
             </div>
           </div>
@@ -478,7 +482,7 @@ const heroSlides = [
   </section>
 
   <!-- SECCIÓN DESTACADA: SOLVENCIA TÉCNICA Y MARGEN DE ERROR CERO (BANNER CON FOTO Y ESTADÍSTICAS) -->
-  <section class="relative bg-slate-950 text-white py-24 overflow-hidden border-b border-slate-800/80">
+  <section class="relative bg-slate-950 text-white py-14 sm:py-24 overflow-hidden border-b border-slate-800/80">
     <!-- Fondo fotográfico con opacidad -->
     <div class="absolute inset-0 z-0">
       <img 
@@ -561,7 +565,7 @@ const heroSlides = [
   </section>
 
   <!-- PILAR 3: CIERRE DEL TRATO (POR QUÉ SOMOS LA MEJOR OPCIÓN) -->
-  <section class="py-24 border-b border-slate-800/80 bg-slate-950">
+  <section class="py-14 sm:py-24 border-b border-slate-800/80 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mb-16">
@@ -723,6 +727,22 @@ const heroSlides = [
       const animDuration = 1200;
       let timer: number | undefined;
 
+      function isMobile() {
+        return window.innerWidth < 768;
+      }
+
+      function getInitialTransform() {
+        return isMobile() ? 'translateY(-100%)' : 'translateX(-100%)';
+      }
+
+      function getExitTransform() {
+        return isMobile() ? 'translateY(100%)' : 'translateX(100%)';
+      }
+
+      function getActiveTransform() {
+        return isMobile() ? 'translateY(0%)' : 'translateX(0%)';
+      }
+
       function updateUI(idx: number) {
         dots.forEach((dot, i) => {
           if (i === idx) {
@@ -754,7 +774,7 @@ const heroSlides = [
         const nextSlide = slides[nextIndex];
 
         nextSlide.style.transition = 'none';
-        nextSlide.style.transform = 'translateX(-100%)';
+        nextSlide.style.transform = getInitialTransform();
         nextSlide.style.opacity = '0';
         nextSlide.style.zIndex = '2';
         currentSlide.style.zIndex = '1';
@@ -763,18 +783,18 @@ const heroSlides = [
 
         const easing = 'cubic-bezier(0.25, 1, 0.5, 1)';
         currentSlide.style.transition = `transform ${animDuration}ms ${easing}, opacity ${animDuration}ms ease`;
-        currentSlide.style.transform = 'translateX(100%)';
+        currentSlide.style.transform = getExitTransform();
         currentSlide.style.opacity = '0';
 
         nextSlide.style.transition = `transform ${animDuration}ms ${easing}, opacity ${animDuration}ms ease`;
-        nextSlide.style.transform = 'translateX(0%)';
+        nextSlide.style.transform = getActiveTransform();
         nextSlide.style.opacity = '1';
 
         updateUI(nextIndex);
 
         setTimeout(() => {
           currentSlide.style.transition = 'none';
-          currentSlide.style.transform = 'translateX(-100%)';
+          currentSlide.style.transform = getInitialTransform();
           currentSlide.style.zIndex = '0';
           currentIndex = nextIndex;
           isAnimating = false;
@@ -805,6 +825,17 @@ const heroSlides = [
           slideTo(targetIndex);
           startAutoPlay();
         });
+      });
+
+      // Inicializar transforms según viewport (vertical en mobile, horizontal en desktop)
+      slides.forEach((slide, i) => {
+        if (i === 0) {
+          slide.style.transform = getActiveTransform();
+          slide.style.opacity = '1';
+        } else {
+          slide.style.transform = getInitialTransform();
+          slide.style.opacity = '0';
+        }
       });
 
       startAutoPlay();
